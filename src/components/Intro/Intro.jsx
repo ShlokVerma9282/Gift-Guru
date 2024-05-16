@@ -14,20 +14,20 @@ const Intro = () => {
       {/* left name side */}
       <div className="flex flex-col flex-1 gap-8 items-start">
         <div className="flex flex-col gap-2">
-          
-          <p className="font-bold text-5xl text-orange-400">GiftGuru</p>
-          <div>
+          <p className="font-bold text-5xl mt-10 text-orange-400">GiftGuru</p>
+          <div className='flex justify-center items-center text-5xl mt-5'>
+            <p className="text-xl inline-block">
+                The ultimate destination for discovering the perfect gift for every occasion,<br/> offering an unparalleled selection of thoughtfully curated treasures for your&nbsp;
+            </p>
+        </div>
             <ReactTyped
-            className='md:text-5xl sm:text-4xl text-xl font-bold md:pl-4 pl-2'
-              strings={['BTB', 'BTC', 'SASS']}
-              typeSpeed={120}
-              backSpeed={140}
-              loop
-            />
-          </div>
-          
-
-          <span className="text-xl mt-3"></span>
+            className="inline-block text-orange-400 font-bold" // Removed text-3xl, applied inline-block
+            style={{ fontSize: "1.875rem" }} // Adjust font size to 3xl (1.875rem)
+            strings={['Husband', 'Wife', 'Son','Daughter','Mother','Father','Friend']}
+            typeSpeed={120}
+            backSpeed={140}
+            loop
+        />
         </div>
         <Link to="contact" smooth={true} spy={true}>
           <button className="bg-orange-400 hover:bg-orange-500 text-white font-bold py-2 px-4 rounded-xl">Get Gift</button>

@@ -7,6 +7,7 @@ import Instagram from "../../img/insta.png";
 import Vector1 from "../../img/Vector1.png";
 import Vector2 from "../../img/Vector2.png";
 import boy from "../../img/boy.png";
+import Forms from "./Forms";
 
 
 const Intro = () => {
@@ -41,11 +42,16 @@ const Intro = () => {
       </div>
       {/* right image side */}
       <div className="flex flex-1 relative">
-        <img src={Vector1} alt="" className="absolute scale-75 -left-15 -top-9" />
-        <img src={Vector2} alt="" className="absolute scale-75 -left-3 -top-18" />
-        <img src={boy} alt="" className="absolute scale-125 left-28" />
+              <div className="max-w-2xl p-8 bg-white shadow-md rounded-md">
+                <Forms.GenderInputForm />
+                <Forms.AgeRangeForm />
+                <Forms.EventTypeInputForm />
+                <Forms.RecipientForm />
+                <Forms.CategorySelectionForm />
+                <Forms.PriceRangeInput />
+              </div>
+        </div>
       </div>
-    </div>
   );
 };
 

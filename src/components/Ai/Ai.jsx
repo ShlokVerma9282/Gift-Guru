@@ -1,5 +1,8 @@
 import React from "react";
 import Forms from "./Forms";
+import Vector1 from "../../img/Vector1.png";
+import Vector2 from "../../img/Vector2.png";
+import boy from "../../img/boy.png";
 
 const Ai = () => {
   return (
@@ -8,17 +11,14 @@ const Ai = () => {
         <Forms.PerfectPresent />
       </div>
       <div className="w-1/2 pl-4">
+      <div className="flex flex-1 relative">
             <div className=" min-h-screen flex justify-center items-center">
-                <div className="max-w-2xl p-8 bg-white shadow-md rounded-md">
-                <Forms.GenderInputForm />
-                <Forms.AgeRangeForm />
-                <Forms.EventTypeInputForm />
-                <Forms.RecipientForm />
-                <Forms.CategorySelectionForm />
-                <Forms.PriceRangeInput />
-                </div>
+            <img src={Vector1} alt=""  />
+            <img src={Vector2} alt="" className="absolute scale-75 -left-3" />
+            <img src={boy} alt="" className="absolute scale-125 left-28" />
             </div>
         </div>
+      </div>
     </div>
   );
 };

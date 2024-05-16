@@ -14,15 +14,14 @@ const Works = () => {
         <div className="awesome">
           <span className="fuzzy-bubbles-bold">Works with All these</span>
           <span className="fuzzy-bubbles-bold">Brands & Clients</span>
-          <div  className="text-2xl">
-            <span>
-              Trusted by Top Brands We’re proud to collaborate with global giants like Shopify and Amazon 
+            <span className="open-sans-regular font-bold">
+              Trusted by Top Brands We’re proud to collaborate with global giants 
               <br />
-              to bring you an array of choices from the best in the business.
+              like Shopify and Amazon to bring you an array of choices from the best in 
               <br />
-              Whether it’s a birthday bash or a token of appreciation, find the ideal gift with ease and confidence.
+              the business.Whether it’s a birthday bash or a token of appreciation, find
+              <br /> the ideal gift with ease and confidence.
             </span>
-          </div>
         </div>
       </div>
       <div className="w-1/5"></div>

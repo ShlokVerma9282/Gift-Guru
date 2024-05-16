@@ -12,7 +12,7 @@ const GenderInputForm = () => {
   return (
     <div>
       <div className=" max-w-md mx-auto p-4">
-        <label htmlFor="gender" className="text-m font-semibold mb-3">
+        <label htmlFor="gender" className="text-m font-semibold mb-3 open-sans-regular ">
           Select Gender:
         </label>
         <select
@@ -51,7 +51,7 @@ class AgeRangeForm extends React.Component {
   render() {
     return (
       <div className="max-w-md mx-auto p-4">
-        <label htmlFor="age-range" className="text-m font-semibold mb-3">
+        <label htmlFor="age-range" className="text-m font-semibold mb-3 open-sans-regular ">
           Age Range:
         </label>
         <select
@@ -85,7 +85,7 @@ const EventTypeInputForm = () => {
 
   return (
     <div className="max-w-md mx-auto p-4">
-      <label htmlFor="event-type" className="text-m font-semibold mb-3">
+      <label htmlFor="event-type" className="text-m font-semibold mb-3 open-sans-regular">
         Select Occasion:
       </label>
       <select
@@ -109,7 +109,7 @@ const EventTypeInputForm = () => {
 };
 
 const categories = [
-  { id: 1, name: "Electronics and Computers" },
+  { id: 1, name: "Electronics " },
   { id: 2, name: "Home and Kitchen" },
   { id: 3, name: "Furniture" },
   { id: 4, name: "Outdoor and Garden" },
@@ -153,12 +153,12 @@ const CategorySelectionForm = () => {
 
   return (
     <div className="w-full max-w-md p-4 mx-auto">
-      <label htmlFor="event-type" className="text-m font-semibold mb-3">
+      <label htmlFor="event-type" className="text-m font-semibold mb-3 open-sans-regular">
         Select Categories:
       </label>
-      <form className="grid grid-cols-2 gap-2">
+      <form className="grid grid-cols-2 gap-2 open-sans-regular">
         {categories.map((category) => (
-          <div key={category.id} className="flex items-center">
+          <div key={category.id} className="flex items-center open-sans-regular">
             <input
               type="checkbox"
               id={category.name}
@@ -167,7 +167,7 @@ const CategorySelectionForm = () => {
               onChange={handleCheckboxChange}
               className="mr-2"
             />
-            <label htmlFor={category.name} className="text-m">
+            <label htmlFor={category.name} className="text-m open-sans-regular">
               {category.name}
             </label>
           </div>
@@ -206,7 +206,7 @@ const PriceRangeInput = () => {
 
   return (
     <div className="max-w-md mx-auto p-4">
-      <label htmlFor="event-type" className="text-m font-semibold mb-3">
+      <label htmlFor="event-type" className="text-m font-semibold mb-3 open-sans-regular">
         Select a Price Range:
       </label>
 
@@ -247,7 +247,7 @@ const RecipientForm = () => {
 
   return (
     <div className="max-w-md mx-auto p-4">
-      <h1 className="text-m font-semibold mb-3">Recipient Type:</h1>
+      <h1 className="text-m font-semibold mb-3 open-sans-regular">Recipient Type:</h1>
       <select
         className="block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
         value={recipientType}
@@ -276,20 +276,20 @@ const PerfectPresent = () => {
           <h1 className="text-3xl font-bold mb-4 text-orange-400 text-center fuzzy-bubbles-bold">
           How GiftGuru works
           </h1>
-          <p className="text-gray-700 text-lg mb-6 text-center">
+          <p className="text-gray-700 text-lg mb-6 text-center open-sans-regular font-bold">
           Embark on a gifting journey like no other with GiftGuru.co.in, your personal Al-powered gift concierge. 
           Our sophisticated platform harnesses the power of advanced machine learning and natural language processing 
           to curate an array of gift options tailored to your unique preferences.
           </p>
-          <p className="text-gray-700 text-lg mb-6 text-center">
+          <p className="text-gray-700 text-lg mb-6 text-center open-sans-regular font-bold">
           Simply input the age, gender, occasion, interests, product category, and budget for your intended recipient,
            and let our intelligent algorithms weave through the vast expanse of possibilities to present you with a bespoke 
            selection of gift ideas. Our system is finely tuned to align with the recipient's interests and tastes, ensuring 
            that each gift resonates with personal significance.
           </p>
-          <p className="text-gray-700 text-lg mb-6 text-center">
+          <p className="text-gray-700 text-lg mb-6 text-center open-sans-regular font-bold">
           Bid farewell to the endless search for the ideal gift. Embrace the future of gifting with GiftGuru.co.in and transform
-           your shopping experience into a seamless and delightful adventure🎁✨
+           your shopping experience into a seamless and delightful adventure.
           </p>
         </div>
       </div>

@@ -1,8 +1,8 @@
 import React from "react";
-import Typed from 'react-typed';
+import { ReactTyped } from "react-typed";
 import Github from "../../img/facebookorange.jpg";
 import LinkedIn from "../../img/twitter.png";
-import Instagram from "../../img/instagram.png";
+import Instagram from "../../img/insta.png";
 import Vector1 from "../../img/Vector1.png";
 import Vector2 from "../../img/Vector2.png";
 import boy from "../../img/boy.png";
@@ -15,8 +15,19 @@ const Intro = () => {
       <div className="flex flex-col flex-1 gap-8 items-start">
         <div className="flex flex-col gap-2">
           
-          <span className="font-bold text-5xl text-orange-400">GiftGuru</span>
-          <span className="text-xl mt-3">Unlock the Art of Thoughtful Gifting at GiftGuru.co.in!<br/>Navigate our constellation of curated treasures and unveil<br/> the perfect gift with cosmic ease. Begin your journey today,<br/> where every click whispers a personalized surprise.</span>
+          <p className="font-bold text-5xl text-orange-400">GiftGuru</p>
+          <div>
+            <ReactTyped
+            className='md:text-5xl sm:text-4xl text-xl font-bold md:pl-4 pl-2'
+              strings={['BTB', 'BTC', 'SASS']}
+              typeSpeed={120}
+              backSpeed={140}
+              loop
+            />
+          </div>
+          
+
+          <span className="text-xl mt-3"></span>
         </div>
         <Link to="contact" smooth={true} spy={true}>
           <button className="bg-orange-400 hover:bg-orange-500 text-white font-bold py-2 px-4 rounded-xl">Get Gift</button>

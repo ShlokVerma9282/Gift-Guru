@@ -66,9 +66,10 @@ const Services = () => {
             <span className="mt-10">Our Awesome</span>
             <span>services</span>
             <span>
-              Lorem ispum is simply dummy text of printing of printing Lorem
-              <br />
-              ispum is simply dummy text of printing
+            Unlock the Art of Thoughtful Gifting at GiftGuru.co.in!
+            <br/>Navigate our constellation of curated treasures and unveil
+            <br/> the perfect gift with cosmic ease. Begin your journey today,
+            <br/> where every click whispers a personalized surprise.
             </span>
             <div className="blur s-blur1" style={{ background: "#ABF1FF94" }}></div>
           </div>

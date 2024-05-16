@@ -9,7 +9,7 @@ import profilePic2 from "../../img/birthday.jpg";
 import profilePic3 from "../../img/graduation.jpg";
 import profilePic4 from "../../img/christmas.jpg";
 
-const Testimonial = () => {
+const Recommendation = () => {
   const clients = [
     {
       img: profilePic1,
@@ -39,9 +39,9 @@ const Testimonial = () => {
     <div className="ml-10">
       <div className="t-wrapper" id="testimonial">
         <div className="t-heading">
-          <span>Our Curated </span>
-          <span>best list </span>
-          <span>for...</span>
+          <span className="fuzzy-bubbles-bold">Our Curated </span>
+          <span className="fuzzy-bubbles-bold">best list </span>
+          <span className="fuzzy-bubbles-bold">for...</span>
         <div className="blur t-blur1" style={{ background: "var(--purple)" }}></div>
         <div className="blur t-blur2" style={{ background: "skyblue" }}></div>
 
@@ -68,4 +68,4 @@ const Testimonial = () => {
   );
 };
 
-export default Testimonial;
+export default Recommendation;

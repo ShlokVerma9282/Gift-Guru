@@ -14,8 +14,8 @@ const Portfolio = () => {
   return (
     <div className="portfolio" id="portfolio">
       {/* heading */}
-      <span>Recent Selections</span>
-      <span>Best Buys</span>
+      <span className="fuzzy-bubbles-bold">Recent Selections</span>
+      <span className="fuzzy-bubbles-bold">Best Buys</span>
 
       {/* slider */}
       <Swiper

@@ -273,7 +273,7 @@ const PerfectPresent = () => {
     <div className="flex">
       <div className=" min-h-screen flex justify-center items-center">
         <div className="max-w-2xl p-8 bg-white shadow-md rounded-md">
-          <h1 className="text-3xl font-bold mb-4 text-orange-400 text-center">
+          <h1 className="text-3xl font-bold mb-4 text-orange-400 text-center fuzzy-bubbles-bold">
           How GiftGuru works
           </h1>
           <p className="text-gray-700 text-lg mb-6 text-center">

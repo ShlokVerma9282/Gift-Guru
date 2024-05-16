@@ -14,7 +14,7 @@ const Intro = () => {
       {/* left name side */}
       <div className="flex flex-col flex-1 gap-8 items-start">
         <div className="flex flex-col gap-2">
-          <p className="font-bold text-5xl mt-10 text-orange-400">GiftGuru</p>
+        <p className="font-bold text-5xl mt-10 text-orange-400 fuzzy-bubbles-bold ">GiftGuru</p>
           <div className='flex justify-center items-center text-5xl mt-5'>
             <p className="text-xl inline-block">
                 The ultimate destination for discovering the perfect gift for every occasion,<br/> offering an unparalleled selection of thoughtfully curated treasures for your&nbsp;

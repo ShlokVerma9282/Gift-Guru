@@ -12,8 +12,8 @@ const Works = () => {
     <div className="works" id="works">
       <div className="w-left">
         <div className="awesome">
-          <span>Works with All these</span>
-          <span>Brands & Clients</span>
+          <span className="fuzzy-bubbles-bold">Works with All these</span>
+          <span className="fuzzy-bubbles-bold">Brands & Clients</span>
           <div  className="text-2xl">
             <span>
               Trusted by Top Brands We’re proud to collaborate with global giants like Shopify and Amazon 

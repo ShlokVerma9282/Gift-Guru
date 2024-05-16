@@ -63,8 +63,8 @@ const Services = () => {
         <div className="w-3/5"></div>
         <div className="pt-40">
           <div className="awesome">
-            <span className="mt-10">Our Awesome</span>
-            <span>services</span>
+            <span className="mt-10 fuzzy-bubbles-bold">Our Awesome</span>
+            <span className="fuzzy-bubbles-bold">services</span>
             <span>
             Unlock the Art of Thoughtful Gifting at GiftGuru.co.in!
             <br/>Navigate our constellation of curated treasures and unveil

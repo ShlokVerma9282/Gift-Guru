@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+  body {
+    background-color:white;
+  }
+}
+
+.slick-slide > div {
+  margin: 0 10px;
+  color:black
+}
+
+.slick-dots li.slick-active button:before {
+  color:rgb(245, 94, 8) !important;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: orangered !important; /* Apply black color to the arrows */
+}

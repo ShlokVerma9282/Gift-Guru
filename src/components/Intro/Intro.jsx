@@ -50,8 +50,9 @@ const Intro = () => {
                 <Forms.CategorySelectionForm />
                 <Forms.PriceRangeInput />
               </div>
-        </div>
       </div>
+      </div>
+
   );
 };
 

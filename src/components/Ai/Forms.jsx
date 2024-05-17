@@ -12,7 +12,7 @@ const GenderInputForm = () => {
   return (
     <div>
       <div className=" max-w-md mx-auto p-4">
-        <label htmlFor="gender" className="text-m font-semibold mb-3 open-sans-regular ">
+        <label htmlFor="gender" className="text-m font-semibold mb-3 open-sans-regular font-bold">
           Select Gender:
         </label>
         <select
@@ -51,7 +51,7 @@ class AgeRangeForm extends React.Component {
   render() {
     return (
       <div className="max-w-md mx-auto p-4">
-        <label htmlFor="age-range" className="text-m font-semibold mb-3 open-sans-regular ">
+        <label htmlFor="age-range" className="text-m font-semibold mb-3 ">
           Age Range:
         </label>
         <select
@@ -85,7 +85,7 @@ const EventTypeInputForm = () => {
 
   return (
     <div className="max-w-md mx-auto p-4">
-      <label htmlFor="event-type" className="text-m font-semibold mb-3 open-sans-regular">
+      <label htmlFor="event-type" className="text-m font-semibold mb-3">
         Select Occasion:
       </label>
       <select
@@ -109,7 +109,7 @@ const EventTypeInputForm = () => {
 };
 
 const categories = [
-  { id: 1, name: "Electronics " },
+  { id: 1, name: "Electronics and Computers" },
   { id: 2, name: "Home and Kitchen" },
   { id: 3, name: "Furniture" },
   { id: 4, name: "Outdoor and Garden" },
@@ -153,12 +153,12 @@ const CategorySelectionForm = () => {
 
   return (
     <div className="w-full max-w-md p-4 mx-auto">
-      <label htmlFor="event-type" className="text-m font-semibold mb-3 open-sans-regular">
+      <label htmlFor="event-type" className="text-m font-semibold mb-3">
         Select Categories:
       </label>
-      <form className="grid grid-cols-2 gap-2 open-sans-regular">
+      <form className="grid grid-cols-2 gap-2">
         {categories.map((category) => (
-          <div key={category.id} className="flex items-center open-sans-regular">
+          <div key={category.id} className="flex items-center">
             <input
               type="checkbox"
               id={category.name}
@@ -167,7 +167,7 @@ const CategorySelectionForm = () => {
               onChange={handleCheckboxChange}
               className="mr-2"
             />
-            <label htmlFor={category.name} className="text-m open-sans-regular">
+            <label htmlFor={category.name} className="text-m">
               {category.name}
             </label>
           </div>
@@ -206,7 +206,7 @@ const PriceRangeInput = () => {
 
   return (
     <div className="max-w-md mx-auto p-4">
-      <label htmlFor="event-type" className="text-m font-semibold mb-3 open-sans-regular">
+      <label htmlFor="event-type" className="text-m font-semibold mb-3">
         Select a Price Range:
       </label>
 
@@ -247,7 +247,7 @@ const RecipientForm = () => {
 
   return (
     <div className="max-w-md mx-auto p-4">
-      <h1 className="text-m font-semibold mb-3 open-sans-regular">Recipient Type:</h1>
+      <h1 className="text-m font-semibold mb-3">Recipient Type:</h1>
       <select
         className="block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
         value={recipientType}

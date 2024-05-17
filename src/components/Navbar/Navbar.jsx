@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Button from './Button';
 import giftpng from "./Designer__3_-removebg-preview.png";
 
 const Navbar = () => {

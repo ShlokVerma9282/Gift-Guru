@@ -14,11 +14,11 @@ const Ai = () => {
       <div className="flex flex-1 relative">
             <div className=" min-h-screen flex justify-center items-center">
             <img src={Vector1} alt=""  />
-            <img src={Vector2} alt="" className="absolute scale-75 -left-3" />
+            <img src={Vector2} alt="" className="absolute scale-75 -left-3 " />
             <img src={boy} alt="" className="absolute scale-125 left-28" />
             </div>
         </div>
-      </div>
+        </div>
     </div>
   );
 };

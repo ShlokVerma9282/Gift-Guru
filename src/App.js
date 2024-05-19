@@ -7,7 +7,7 @@ import Ai from "./components/Ai/Ai";
 import Portfolio from "./components/Slider/Slider";
 import Testimonial from "./components/Recommendation/Recommendation";
 import Footer from "./components/Footer/Footer";
-import Carousel from "./components/Carousel/Slider";
+
 
 function App() {
   return (

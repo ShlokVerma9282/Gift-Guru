@@ -4,6 +4,9 @@ import Github from "../../img/facebookorange.png";
 import messenger from "../../img/facebookmessenger.png"
 import LinkedIn from "../../img/twitter.png";
 import Instagram from "../../img/insta.png";
+import Vector1 from "../../img/Vector1.png";
+import Vector2 from "../../img/Vector2.png";
+import boy from "../../img/boy.png";
 import Forms from "./Forms";
 import Carousel from "../Carousel/Slider";
 

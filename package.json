@@ -19,7 +19,8 @@
     "react-slick": "^0.30.2",
     "react-typed": "^2.0.12",
     "slick-carousel": "^1.8.1",
-    "swiper": "^8.0.7",
+    "styled-components": "^6.1.11",
+    "swiper": "^8.4.7",
     "web-vitals": "^2.1.0"
   },
   "scripts": {

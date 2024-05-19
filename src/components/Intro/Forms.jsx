@@ -148,7 +148,7 @@ const CategorySelectionForm = () => {
   };
 
   return (
-    <div className="w-full max-w-md p-4 mx-auto">
+    <div className="w-full max-w-md mx-auto">
       <label htmlFor="event-type" className="text-m font-semibold mb-3 open-sans-regular">
         Select Categories:
       </label>

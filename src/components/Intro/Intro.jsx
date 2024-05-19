@@ -5,6 +5,7 @@ import messenger from "../../img/facebookmessenger.png"
 import LinkedIn from "../../img/twitter.png";
 import Instagram from "../../img/insta.png";
 import Forms from "./Forms";
+import Carousel from "../Carousel/Slider";
 
 
 const Intro = () => {
@@ -36,10 +37,13 @@ const Intro = () => {
           <img src={Github} alt="" className="transform scale-50 hover:scale-75" />
           <img src={messenger} alt="" className="transform scale-50 hover:scale-75" />
         </div>
+        <div className="max-w-2xl p-2 bg-white shadow-md rounded-md">
+<Carousel/>
+</div>
       </div>
       {/* right image side */}
       <div className="flex flex-1 relative">
-              <div className="max-w-2xl p-8 bg-white shadow-md rounded-md">
+              <div className="max-w-2xl ml-10 p-8 bg-white shadow-md rounded-md">
                 <Forms.GenderInputForm />
                 <Forms.AgeRangeForm />
                 <Forms.EventTypeInputForm />
@@ -48,7 +52,11 @@ const Intro = () => {
                 <Forms.PriceRangeInput />
               </div>
       </div>
+      
+
       </div>
+
+
 
   );
 };

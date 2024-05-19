@@ -65,7 +65,7 @@ const Services = () => {
           <div className="awesome">
             <span className="mt-10 fuzzy-bubbles-bold">Our Awesome</span>
             <span className="fuzzy-bubbles-bold">services</span>
-            <span className="open-sans-regular font-bold">
+            <span className="open-sans-regular">
             Unlock the Art of Thoughtful Gifting at GiftGuru.co.in!
             <br/>Navigate our constellation of curated treasures and unveil
             <br/> the perfect gift with cosmic ease. Begin your journey today,

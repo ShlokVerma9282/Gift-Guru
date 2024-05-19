@@ -4,9 +4,6 @@ import Github from "../../img/facebookorange.png";
 import messenger from "../../img/facebookmessenger.png"
 import LinkedIn from "../../img/twitter.png";
 import Instagram from "../../img/insta.png";
-import Vector1 from "../../img/Vector1.png";
-import Vector2 from "../../img/Vector2.png";
-import boy from "../../img/boy.png";
 import Forms from "./Forms";
 import Carousel from "../Carousel/Slider";
 
@@ -20,17 +17,18 @@ const Intro = () => {
         <p className="font-bold text-5xl mt-10 text-orange-400 fuzzy-bubbles-bold ">GiftGuru</p>
           <div className='flex justify-center items-center text-5xl mt-5'>
             <p className="text-xl inline-block open-sans-regular font-bold">
-                The ultimate destination for discovering the perfect gift for every occasion,<br/> offering an unparalleled selection of thoughtfully curated treasures for your&nbsp;
-            </p>
-        </div>
-            <ReactTyped
-            className="inline-block text-orange-400 font-bold" // Removed text-3xl, applied inline-block
+                The ultimate destination for discovering the perfect gift for every occasion,offering an unparalleled selection of thoughtfully curated treasures for your 
+                <ReactTyped
+            className="inline-block text-orange-400 font-bold ml-1" // Removed text-3xl, applied inline-block
             style={{ fontSize: "1.875rem" }} // Adjust font size to 3xl (1.875rem)
             strings={['Husband', 'Wife', 'Son','Daughter','Mother','Father','Friend']}
             typeSpeed={120}
             backSpeed={140}
             loop
         />
+            </p>
+        </div>
+            
         </div>
         
         {/* social icons */}

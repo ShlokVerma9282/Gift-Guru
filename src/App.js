@@ -17,9 +17,9 @@ function App() {
         <Intro />
       </div>
       <Ai />
+      <Portfolio />
       <Services />
       <Works />
-      <Portfolio />
       <Testimonial />
       <Footer />
     </div>

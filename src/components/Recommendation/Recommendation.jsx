@@ -1,5 +1,4 @@
 import React from "react";
-import "./Recommendation.css";
 import Carousel from "./Carousel";
 
 const Recommendation = () => {
@@ -7,11 +6,11 @@ const Recommendation = () => {
 
   return (
     <div className="ml-10">
-      <div id="testimonial">
-        <div className="t-heading">
-          <span>Our Curated </span>
-          <span>best list </span>
-          <span>for...</span>
+      <div>
+        <div className="mt-10 pt-10 ">
+          <span className="text-3xl fuzzy-bubbles-bold">Our Curated </span>
+          <span className="text-3xl  text-orange-400 fuzzy-bubbles-bold">best list </span>
+          <span className="text-3xl  fuzzy-bubbles-bold">for...</span>
         </div>
         <Carousel />
       </div>

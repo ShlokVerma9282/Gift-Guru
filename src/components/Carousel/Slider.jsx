@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -9,6 +9,8 @@ import "./Slider.css";
 import Searchbar from "../SearchBar/Searchbar";
 
 function Carousel() {
+  const [searchTerm, setSearchTerm] = useState("");
+
   const settings = {
     dots: true,
     infinite: true,
@@ -17,8 +19,12 @@ function Carousel() {
     slidesToScroll: 1,
   };
 
+  const handleReviewClick = (review) => {
+    setSearchTerm(review);
+  };
+
   return (
-    <div className="max-w-md h-70">
+    <div className="max-w-lg h-70">
       <div className="mt-2 mb-16">
         <Slider {...settings}>
           {data.map((d, index) => (
@@ -27,11 +33,14 @@ function Carousel() {
                 <img
                   src={d.img}
                   alt=""
-                  className="items-center h-70 rounded-lg border-black shadow-xl"
+                  className="items-center h-60 rounded-lg border-black shadow-xl"
                 />
               </div>
 
-              <div className="bg-white h-22 w-lg font-italic text-black rounded-xl flex flex-col items-center justify-center gap-7 mt-3 mb-2 border-black shadow-lg">
+              <div
+                className="bg-white h-22 w-lg font-italic text-black rounded-xl flex flex-col items-center justify-center gap-7 mt-3 mb-2 border-black shadow-lg cursor-pointer"
+                onClick={() => handleReviewClick(d.review)}
+              >
                 <p className="text-center font-italic italic text-xs">
                   {d.review}
                 </p>
@@ -39,9 +48,8 @@ function Carousel() {
             </div>
           ))}
         </Slider>
-       
       </div>
-      <Searchbar/>
+      <Searchbar setExternalSearchTerm={searchTerm} />
     </div>
   );
 }
@@ -50,17 +58,17 @@ const data = [
   {
     img: img1,
     review:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
+      "Celebrate love with a heartfelt gift that speaks volumes, showing your special someone how much they mean to you.",
   },
   {
     img: img2,
     review:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ",
+      "Cherish your friends with tokens of appreciation, strengthening the bond that makes your friendship unique and enduring.",
   },
   {
     img: img3,
     review:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
+      "Commemorate your union with a meaningful gift that symbolizes the love and commitment shared in your journey together.",
   },
   {
     img: img1,

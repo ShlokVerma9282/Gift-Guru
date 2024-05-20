@@ -43,7 +43,7 @@ function Carousel() {
   };
 
   return (
-    <div className="max-w-xl h-70">
+    <div className="max-w-lg h-70">
       <div className="mt-2 mb-16">
         <Slider {...settings}>
           {data.map((d, index) => (
@@ -52,7 +52,7 @@ function Carousel() {
                 <img
                   src={d.img}
                   alt=""
-                  className="items-center h-71 rounded-lg border-black shadow-xl cursor-pointer"
+                  className="items-center h-60 w-48 rounded-lg border-black shadow-xl cursor-pointer"
                   onClick={() => handleReviewClick(d.review)}
                 />
               </div>
@@ -78,17 +78,17 @@ const data = [
   {
     img: img1,
     review:
-      "Celebrate love with a heartfelt gift that speaks volumes, showing your special someone how much they mean to you.",
+      "Celebrate love with a heartfelt gift that speaks volumes, showing your special someone how much they mean to youCelebrate love .",
   },
   {
     img: img2,
     review:
-      "Best Candy to give this halloween season.",
+      "Cherish your friends with tokens of appreciation, strengthening the bond that makes your friendship unique and enduring.",
   },
   {
     img: img3,
     review:
-      "Best teddy bear for this Valetines Day.",
+      "Commemorate your union with a meaningful gift that symbolizes the love and commitment shared in your journey together.",
   },
   {
     img: img1,

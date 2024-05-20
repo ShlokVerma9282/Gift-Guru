@@ -14,7 +14,7 @@ const Works = () => {
         <div className="awesome">
           <span className="fuzzy-bubbles-bold">Works with All these</span>
           <span className="fuzzy-bubbles-bold">Brands & Clients</span>
-            <span className="open-sans-regular font-bold">
+            <span className="open-sans-regular ">
               Trusted by Top Brands We’re proud to collaborate with global giants 
               <br />
               like Shopify and Amazon to bring you an array of choices from the best in 

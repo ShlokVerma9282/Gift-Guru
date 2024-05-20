@@ -11,15 +11,15 @@ import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App bg-gray-50">
       <Navbar />
       <div>
         <Intro />
       </div>
       <Ai />
+      <Portfolio />
       <Services />
       <Works />
-      <Portfolio />
       <Testimonial />
       <Footer />
     </div>

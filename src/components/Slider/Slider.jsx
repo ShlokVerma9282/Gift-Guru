@@ -7,7 +7,7 @@ import ProductCarousel from "./ProductCarousel";
 const Portfolio = () => {
   
   return (
-    <div className="portfolio" id="portfolio">
+    <div className="portfolio mt-10" id="portfolio">
       {/* heading */}
       <span className="fuzzy-bubbles-bold">Recent Selections</span>
       <span className="fuzzy-bubbles-bold">Best Buys</span>

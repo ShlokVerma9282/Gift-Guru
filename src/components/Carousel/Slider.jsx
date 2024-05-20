@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -17,6 +17,25 @@ function Carousel() {
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          initialSlide: 1,
+        },
+      },
+    ],
   };
 
   const handleReviewClick = (review) => {
@@ -29,16 +48,17 @@ function Carousel() {
         <Slider {...settings}>
           {data.map((d, index) => (
             <div key={index}>
-              <div className="flex justify-center items-center w-3xl">
+              <div className="flex justify-center items-center w-full">
                 <img
                   src={d.img}
                   alt=""
-                  className="items-center h-60 rounded-lg border-black shadow-xl"
+                  className="items-center h-71 rounded-lg border-black shadow-xl cursor-pointer"
+                  onClick={() => handleReviewClick(d.review)}
                 />
               </div>
 
               <div
-                className="bg-white h-22 w-lg font-italic text-black rounded-xl flex flex-col items-center justify-center gap-7 mt-3 mb-2 border-black shadow-lg cursor-pointer"
+                className="bg-white h-22 w-full font-italic text-black rounded-xl flex flex-col items-center justify-center gap-7 mt-3 mb-2 border-black shadow-lg cursor-pointer"
                 onClick={() => handleReviewClick(d.review)}
               >
                 <p className="text-center font-italic italic text-xs">
@@ -58,7 +78,7 @@ const data = [
   {
     img: img1,
     review:
-      "Celebrate love with a heartfelt gift that speaks volumes, showing your special someone how much they mean to you.",
+      "Celebrate love with a heartfelt gift that speaks volumes, showing your special someone how much they mean to youCelebrate love .",
   },
   {
     img: img2,
@@ -73,12 +93,12 @@ const data = [
   {
     img: img1,
     review:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ",
+      "Celebrate love with a heartfelt gift that speaks volumes, showing your special someone how much they mean to youCelebrate love .",
   },
   {
     img: img2,
     review:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ",
+      "Cherish your friends with tokens of appreciation, strengthening the bond that makes your friendship unique and enduring.",
   },
 ];
 

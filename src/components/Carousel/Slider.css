@@ -13,4 +13,24 @@
 .slick-prev:before,
 .slick-next:before {
   color: orangered !important; /* Apply orangered color to the arrows */
+  font-size: 24px; /* Increase the font size of the arrows */
+}
+
+.slick-dots {
+  bottom: -30px; /* Adjust position of the dots */
+}
+
+.slick-prev,
+.slick-next {
+  z-index: 1;
+  width: 50px; /* Increase width for easier clicking */
+  height: 50px; /* Increase height for easier clicking */
+}
+
+.slick-prev {
+  left: -60px; /* Adjust position of the previous button */
+}
+
+.slick-next {
+  right: -60px; /* Adjust position of the next button */
 }

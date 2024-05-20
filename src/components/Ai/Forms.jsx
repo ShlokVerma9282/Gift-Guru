@@ -12,7 +12,7 @@ const GenderInputForm = () => {
   return (
     <div>
       <div className=" max-w-md mx-auto p-4">
-        <label htmlFor="gender" className="text-m font-semibold mb-3 open-sans-regular font-bold">
+        <label htmlFor="gender" className="text-m font-semibold mb-3 open-sans-regular">
           Select Gender:
         </label>
         <select

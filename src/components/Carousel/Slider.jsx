@@ -68,7 +68,7 @@ const data = [
   {
     img: img3,
     review:
-      "Best teddy bear for this valetine.",
+      "Best teddy bear for this Valetines Day.",
   },
   {
     img: img1,

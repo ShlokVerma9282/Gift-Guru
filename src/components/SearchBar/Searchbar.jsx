@@ -48,7 +48,7 @@ const Searchbar = ({ setExternalSearchTerm }) => {
                 <input
                     type="text"
                     className="outline-none border-0 w-full p-1.5 text-[1.2em]"
-                    placeholder="Search"
+                    placeholder="Search For The Best Gift"
                     value={searchTerm}
                     onChange={handleChange}
                     onClick={() => setOpen(!open)}

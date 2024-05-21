@@ -1,25 +1,25 @@
 import React, { useState } from "react";
-import Forms from "./Forms";
+
 const GenderInputForm = () => {
-  const [selectedGender, setSelectedGender] = useState(""); // State to store selected gender
+  const [selectedGender, setSelectedGender] = useState("");
 
   const handleGenderChange = (event) => {
     const gender = event.target.value;
-    setSelectedGender(gender); // Update selected gender state
+    setSelectedGender(gender);
     console.log(`Gender selected: ${gender}`);
   };
 
   return (
     <div>
-      <div className=" max-w-md mx-auto p-4">
-        <label htmlFor="gender" className="text-m font-semibold mb-3 open-sans-regular ">
+      <div className="max-w-md mx-auto p-4">
+        <label htmlFor="gender" className="text-m font-semibold mb-3 open-sans-regular">
           Select Gender:
         </label>
         <select
           id="gender"
           name="gender"
           className="block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
-          value={selectedGender} // Bind selected gender to state
+          value={selectedGender}
           onChange={handleGenderChange}
         >
           <option disabled value="">
@@ -29,7 +29,7 @@ const GenderInputForm = () => {
           <option value="female">Female</option>
           <option value="other">Other</option>
         </select>
-      </div>{" "}
+      </div>
     </div>
   );
 };
@@ -38,7 +38,7 @@ class AgeRangeForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedOption: "1-10", // Default selected option
+      selectedOption: "1-10",
     };
   }
 
@@ -51,7 +51,7 @@ class AgeRangeForm extends React.Component {
   render() {
     return (
       <div className="max-w-md mx-auto p-4">
-        <label htmlFor="age-range" className="text-m font-semibold mb-3 open-sans-regular ">
+        <label htmlFor="age-range" className="text-m font-semibold mb-3 open-sans-regular">
           Age Range:
         </label>
         <select
@@ -105,7 +105,7 @@ const EventTypeInputForm = () => {
 };
 
 const categories = [
-  { id: 1, name: "Electronics " },
+  { id: 1, name: "Electronics" },
   { id: 2, name: "Home and Kitchen" },
   { id: 3, name: "Furniture" },
   { id: 4, name: "Outdoor and Garden" },
@@ -118,32 +118,26 @@ const categories = [
 ];
 
 const CategorySelectionForm = () => {
-  const [customCategory, setCustomCategory] = useState(""); // State for custom category text
-  const [showCustomInput, setShowCustomInput] = useState(false); // State to toggle display of custom input
+  const [customCategory, setCustomCategory] = useState("");
+  const [showCustomInput, setShowCustomInput] = useState(false);
 
-  // Handler for checkbox change
   const handleCheckboxChange = (event) => {
     const { name, checked } = event.target;
     if (name === "Others" && checked) {
-      setShowCustomInput(true); // Show custom input if "Others" checkbox is checked
+      setShowCustomInput(true);
     } else {
-      setShowCustomInput(false); // Hide custom input if any other checkbox is checked
+      setShowCustomInput(false);
     }
   };
 
-  // Handler for custom category input change
   const handleCustomCategoryChange = (event) => {
     setCustomCategory(event.target.value);
   };
 
-  // Handler for custom category form submission
   const handleSubmitCustomCategory = (event) => {
     event.preventDefault();
-    // Handle submission of custom category (e.g., add it to state, perform any other action)
     console.log("Custom category submitted:", customCategory);
-    // Clear the input field
     setCustomCategory("");
-    // Hide the custom input field
     setShowCustomInput(false);
   };
 
@@ -217,7 +211,7 @@ const PriceRangeInput = () => {
           <option value="21-30">$40 - $60</option>
           <option value="31-40">$60 - $80</option>
           <option value="41-50">$80 - $100</option>
-          <option value="41-50">$100+</option>
+          <option value="100+">$100+</option>
         </select>
         <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
           <svg
@@ -227,78 +221,64 @@ const PriceRangeInput = () => {
           ></svg>
         </div>
       </div>
-      <button className="mt-4 w-full bg-orange-400 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
-        Generate Gift Ideas
+    </div>
+  );
+};
+
+const Button = ({ onClick }) => {
+  return (
+    <button
+      className="mt-4 w-full bg-orange-400 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+      onClick={onClick}
+    >
+      Generate Gift Ideas
+    </button>
+  );
+};
+
+const RecipientForm = () => {
+  const [recipient, setRecipient] = useState("");
+
+  const handleRecipientChange = (event) => {
+    setRecipient(event.target.value);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log("Recipient:", recipient);
+    setRecipient("");
+  };
+
+  return (
+    <div className="max-w-md mx-auto p-4">
+      <label htmlFor="recipient" className="text-m font-semibold mb-3 open-sans-regular">
+        Enter the Recipient Name:
+      </label>
+      <input
+        id="recipient"
+        name="recipient"
+        type="text"
+        value={recipient}
+        onChange={handleRecipientChange}
+        className="block w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-indigo-500"
+      />
+      <button
+        type="submit"
+        className="mt-4 w-full bg-orange-400 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+        onClick={handleSubmit}
+      >
+        Submit
       </button>
     </div>
   );
 };
 
-const RecipientForm = () => {
-  const [recipientType, setRecipientType] = useState("");
-
-  const handleRecipientChange = (e) => {
-    setRecipientType(e.target.value);
-  };
-
-  return (
-    <div className="max-w-md mx-auto p-4">
-      <h1 className="text-m font-semibold mb-3 open-sans-regular">Recipient Type:</h1>
-      <select
-        className="block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
-        value={recipientType}
-        onChange={handleRecipientChange}
-      >
-        <option value="">Select Recipient Type</option>
-        <option value="Mother">Mother</option>
-        <option value="Father">Father</option>
-        <option value="Lover">Lover</option>
-        <option value="Wife">Wife</option>
-        <option value="Brother">Brother</option>
-        <option value="Sister">Sister</option>
-        <option value="Friend">Friend</option>
-        <option value="Relatives">Relatives</option>
-        {/* Add more options as needed */}
-      </select>
-    </div>
-  );
-};
-
-const PerfectPresent = () => {
-  return (
-    <div className="flex">
-      <div className=" min-h-screen flex justify-center items-center">
-        <div className="max-w-2xl p-8 bg-white shadow-md rounded-md">
-          <h1 className="text-3xl font-bold mb-4 text-orange-400 text-center fuzzy-bubbles-bold">
-          How GiftGuru works
-          </h1>
-          <p className="text-gray-700 text-lg mb-6 text-center open-sans-regular font-bold">
-          Embark on a gifting journey like no other with GiftGuru.co.in, your personal Al-powered gift concierge. 
-          Our sophisticated platform harnesses the power of advanced machine learning and natural language processing 
-          to curate an array of gift options tailored to your unique preferences.
-          </p>
-          <p className="text-gray-700 text-lg mb-6 text-center open-sans-regular font-bold">
-          Simply input the age, gender, occasion, interests, product category, and budget for your intended recipient,
-           and let our intelligent algorithms weave through the vast expanse of possibilities to present you with a bespoke 
-           selection of gift ideas. Our system is finely tuned to align with the recipient's interests and tastes, ensuring 
-           that each gift resonates with personal significance.
-          </p>
-          <p className="text-gray-700 text-lg mb-6 text-center open-sans-regular font-bold">
-          Bid farewell to the endless search for the ideal gift. Embrace the future of gifting with GiftGuru.co.in and transform
-           your shopping experience into a seamless and delightful adventure.
-          </p>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-export default {
+export {
   GenderInputForm,
   AgeRangeForm,
   EventTypeInputForm,
   CategorySelectionForm,
   PriceRangeInput,
+  Button,
   RecipientForm,
-  PerfectPresent,
 };

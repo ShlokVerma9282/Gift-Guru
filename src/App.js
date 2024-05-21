@@ -8,7 +8,6 @@ import Portfolio from "./components/Slider/Slider";
 import Testimonial from "./components/Recommendation/Recommendation";
 import Footer from "./components/Footer/Footer";
 
-
 function App() {
   return (
     <div className="App bg-gray-50">

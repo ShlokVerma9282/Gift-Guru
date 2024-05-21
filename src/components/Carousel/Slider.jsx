@@ -43,7 +43,7 @@ function Carousel() {
   };
 
   return (
-    <div className="max-w-lg h-70">
+    <div className="max-w-lg h-75">
       <div className="mt-2 mb-16">
         <Slider {...settings}>
           {data.map((d, index) => (

@@ -14,7 +14,7 @@ import {
   Button,
 } from "./Forms";
 import Carousel from "../Carousel/Slider";
-
+import GiftProducts from "../GenerateGiftIdeas/GiftProducts";
 
 const Intro = () => {
   const [showGiftProducts, setShowGiftProducts] = useState(false);
@@ -35,39 +35,41 @@ const Intro = () => {
               <p className="text-xl inline-block open-sans-regular font-bold">
                 The ultimate destination for discovering the perfect gift for every occasion, offering an unparalleled selection of thoughtfully curated treasures for your
                 <ReactTyped
-            className="inline-block text-orange-400 font-bold ml-1" // Removed text-3xl, applied inline-block
-            style={{ fontSize: "1.875rem" }} // Adjust font size to 3xl (1.875rem)
-            strings={['Husband', 'Wife', 'Son','Daughter','Mother','Father','Friend']}
-            typeSpeed={120}
-            backSpeed={140}
-            loop
-        />
-            </p>
-        </div>
-            
+                  className="inline-block text-orange-400 font-bold ml-1"
+                  style={{ fontSize: "1.875rem" }}
+                  strings={['Husband', 'Wife', 'Son', 'Daughter', 'Mother', 'Father', 'Friend']}
+                  typeSpeed={120}
+                  backSpeed={140}
+                  loop
+                />
+              </p>
+            </div>
+          </div>
+          
+          {/* social icons */}
+          <div className="flex gap-3">
+            <img src={LinkedIn} alt="" className="transform scale-50 hover:scale-75" />
+            <img src={Instagram} alt="" className="transform scale-50 hover:scale-75" />
+            <img src={Github} alt="" className="transform scale-50 hover:scale-75" />
+            <img src={messenger} alt="" className="transform scale-50 hover:scale-75" />
+          </div>
+          <div className="max-w-2xl p-2 bg-white shadow-md rounded-md">
+            <Carousel />
+          </div>
         </div>
         
-        {/* social icons */}
-        <div className="flex gap-3">
-          <img src={LinkedIn} alt="" className="transform scale-50 hover:scale-75" />
-          <img src={Instagram} alt="" className="transform scale-50 hover:scale-75" />
-          <img src={Github} alt="" className="transform scale-50 hover:scale-75" />
-          <img src={messenger} alt="" className="transform scale-50 hover:scale-75" />
+        {/* right image side */}
+        <div className="flex flex-1 relative">
+          <div className="max-w-2xl ml-10 p-8 bg-white shadow-md rounded-md">
+            <GenderInputForm />
+            <AgeRangeForm />
+            <EventTypeInputForm />
+            <RecipientForm />
+            <CategorySelectionForm />
+            <PriceRangeInput />
+            <Button onClick={handleButtonClick} /> 
+          </div>
         </div>
-        <div className="max-w-2xl p-2 bg-white shadow-md rounded-md">
-<Carousel/>
-</div>
-      </div>
-      {/* right image side */}
-      <div className="flex flex-1 relative">
-              <div className="max-w-2xl ml-10 p-8 bg-white shadow-md rounded-md">
-                <Forms.GenderInputForm />
-                <Forms.AgeRangeForm />
-                <Forms.EventTypeInputForm />
-                <Forms.RecipientForm />
-                <Forms.CategorySelectionForm />
-                <Forms.PriceRangeInput />
-              </div>
       </div>
 
       {/* GiftProducts container */}

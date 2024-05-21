@@ -2,6 +2,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Intro from "./components/Intro/Intro";
 import Services from "./components/Services/Services";
 import "./App.css";
+
 import Works from "./components/Works/Works";
 import Ai from "./components/Ai/Ai";
 import Portfolio from "./components/Slider/Slider";

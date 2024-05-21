@@ -15,6 +15,7 @@ import {
 } from "./Forms";
 import Carousel from "../Carousel/Slider";
 import GiftProducts from "../GenerateGiftIdeas/GiftProducts";
+import Geocode from "./Geocode";
 
 const Intro = () => {
   const [showGiftProducts, setShowGiftProducts] = useState(false);
@@ -74,11 +75,27 @@ const Intro = () => {
 
       {/* GiftProducts container */}
       {showGiftProducts && (
-  <div className="ml-10 p-8 bg-white shadow-md  rounded-md w-1/2" style={{ height: "70vh" }}> {/* Set width to half */}
-    <GiftProducts />
-  </div>
-)}
+        <div>
+        <div className="flex ml-10 mr-10 p-8 bg-white shadow-md rounded-md" style={{ height: "70vh", width: "175vh" }}>
+          {/* Left section with GiftProducts */}
+          <div className="flex flex-col flex-1 w-1/2 pr-20">
+            <GiftProducts />
+          </div>
+      
+          {/* Vertical line */}
+          <div className="border-l-2 border-orange-400"></div>
+      
+          {/* Right section with Geocode */}
+          <div className="flex flex-col flex-1 w-1/2 pl-20">
+            <Geocode />
+          </div>
+        </div>
+      </div>
+      
+  
+  
 
+)}
     </div>
   );
 };

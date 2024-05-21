@@ -44,7 +44,7 @@ const Searchbar = ({ setExternalSearchTerm }) => {
           onChange={handleChange}
         />
         <button
-          className="bg-blue-500 text-white rounded-full py-2 px-4 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300"
+          className="bg-orange-400 text-white rounded-full py-2 px-4 hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all duration-300"
           onClick={handleSearch}
         >
           Search

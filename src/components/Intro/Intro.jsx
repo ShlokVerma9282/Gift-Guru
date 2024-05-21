@@ -6,6 +6,7 @@ import LinkedIn from "../../img/twitter.png";
 import Instagram from "../../img/insta.png";
 import Forms from "./Forms";
 import Carousel from "../Carousel/Slider";
+import Searchbar from "../SearchBar/Searchbar";
 
 
 const Intro = () => {
@@ -51,6 +52,7 @@ const Intro = () => {
                 <Forms.RecipientForm />
                 <Forms.CategorySelectionForm />
                 <Forms.PriceRangeInput />
+                <Searchbar />
               </div>
       </div>
       

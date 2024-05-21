@@ -40,7 +40,7 @@ const data = [
     img: Amazon5,
     price: `₹489`,
     stars: 3, // Placeholder for star rating
-    link: `https://www.amazon.in/GoSriKi-Womens-Straight-Printed-ANAAR-Beige-GS_S_Beige_Small/dp/B0CWZYRM3G/ref=sr_1_5?crid=RZ42JCRGZFBD&dib=eyJ2IjoiMSJ9.wCKoEdhhpuLBA1dLUiyhyyGhfpYdXr_IX_xRKlTLf4rntZ-CJIjRijX2VT2U3qQmo3gTUcK7JBlRIB4cASujbhsBQhbbJTNQOg1Mlb-EpKR3knEXQnY9Fbwn_atbD_vjfZebikO6n1vxZ8Pra3NCje4exNQ0Rj5avFAyRZS7Ld61o1Yu1qzS-cfBtpbyQw3nfOLfMqByzj5mJ4zmS2nGAMffvsG6onlArMvCbeZCxVWTOsR41MPxFO81ypeWIyy43D8CrMxShj5rOlWy14hylUrDq3m74NoeHXQlAkXzD9k.s6NWK-ZTlKvKULQn4JrE0l-pmI-fIDNaOTzoqPPK8CI&dib_tag=se&keywords=women+clothes&qid=1716056699&sprefix=women+clothe%2Caps%2C228&sr=8-5`,
+    link: `https://www.amazon.in/GoSriKi-Womens-Straight-Printed-ANAAR-Beige-GS_S_Beige_Small/dp/B0CWZYRM3G/ref=sr_1_5?crid=RZ42JCRGZFBD`,
   },
 ];
 
@@ -67,21 +67,24 @@ const GiftProducts = () => {
       <div className="product-grid">
         {data.slice(currentIndex, currentIndex + 2).map((item, index) => (
           <div key={index} className="product-card">
-            <img src={item.img} alt={item.name} />
+            <img src={item.img} alt={item.name} className="product-image" />
             <h3>{truncateName(item.name)}</h3>
             <p>{item.price}</p>
             <p>{"⭐".repeat(item.stars)}</p>
-            <a href={item.link} target="_blank" rel="noopener noreferrer">
-              Buy Now
-            </a>
           </div>
         ))}
       </div>
       <div className="button-group">
-        <button onClick={handlePrevious} disabled={currentIndex === 0}>
+        <button
+          className="retry-button"
+          onClick={handlePrevious}
+          disabled={currentIndex === 0}
+        >
           Previous
         </button>
-        <button onClick={handleRetry}>Retry</button>
+        <button onClick={handleRetry} className="retry-button">
+          Retry
+        </button>
       </div>
     </div>
   );

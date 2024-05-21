@@ -87,7 +87,7 @@ const Intro = () => {
       
           {/* Right section with Geocode */}
           <div className="flex flex-col flex-1 w-1/2 pl-20">
-            <Geocode />
+            {/* <Geocode /> */}
           </div>
         </div>
       </div>

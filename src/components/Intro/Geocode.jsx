@@ -74,22 +74,19 @@ const Geocode = () => {
   };
 
   return (
-    <div className="container mt-5">
-      <h1>Find Malls Near You</h1>
+    <div className="container mt-1">
+      <h1 className='text-orange-400 text-3xl font-bold fuzzy-bubbles-bold'>Local Stores near you</h1>
       {error && <p className="text-danger">{error}</p>}
       {location && (
-        <div className="mt-3">
-          <h3>Coordinates:</h3>
-          <p>Latitude: {location.lat}</p>
-          <p>Longitude: {location.lon}</p>
+        <div className="mt-5">
           {malls.length > 0 && (
             <div>
-              <h3>Malls Near You:</h3>
-              <div className="mall-box-container">
+              <h3 className='text-xl text-black mb-3'>Your options are:</h3>
+              <div className="mall-box-container ">
                 {malls.map(mall => (
-                  <div key={mall.id} className="mall-box">
-                    <p>{mall.tags.name}</p>
-                    <a href={getGoogleMapsLink(mall.lat, mall.lon)} target="_blank" rel="noopener noreferrer">
+                  <div  key={mall.id} className="mall-box mt-5 bg-orange-400 ">
+                    <p className='text-white'>{mall.tags.name}</p>
+                    <a className='ga' href={getGoogleMapsLink(mall.lat, mall.lon)} target="_blank" rel="noopener noreferrer">
                       View on Google Maps
                     </a>
                   </div>
@@ -122,6 +119,15 @@ const Geocode = () => {
         }
         .mall-box a:hover {
           text-decoration: underline;
+        }
+        .ga:link
+        {
+            color:#FFFFFF;
+        }
+
+        .ga:visited
+        {
+            color:#FFFFFF;
         }
       `}</style>
     </div>

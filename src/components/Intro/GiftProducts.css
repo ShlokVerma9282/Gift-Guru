@@ -14,7 +14,7 @@
   }
   
   .product-card img {
-    height: 220px; /* Set the desired height */
+    height: 150px; /* Set the desired height */
     width: 200px;  /* Set the desired width */
     object-fit: cover;
   }

@@ -14,7 +14,7 @@ import {
   Button,
 } from "./Forms";
 import Carousel from "../Carousel/Slider";
-import GiftProducts from "../GenerateGiftIdeas/GiftProducts";
+import GiftProducts from "./GiftProducts";
 import Geocode from "./Geocode";
 
 const Intro = () => {
@@ -76,7 +76,7 @@ const Intro = () => {
       {/* GiftProducts container */}
       {showGiftProducts && (
         <div>
-        <div className="flex ml-10 mr-10 p-8 bg-white shadow-md rounded-md" style={{ height: "70vh", width: "175vh" }}>
+        <div className="flex ml-10 mr-10 p-8 bg-white shadow-md rounded-md" style={{ height: "60vh", width: "175vh" }}>
           {/* Left section with GiftProducts */}
           <div className="flex flex-col flex-1 w-1/2 pr-20">
             <GiftProducts />

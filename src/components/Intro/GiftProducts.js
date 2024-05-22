@@ -65,23 +65,24 @@ const GiftProducts = () => {
   return (
     <div>
       <div className="product-grid">
+        <h1 className='text-orange-400 text-3xl mt-1  font-bold fuzzy-bubbles-bold mb-1'>Our Curated Selection</h1>
         {data.slice(currentIndex, currentIndex + 2).map((item, index) => (
           <div key={index} className="product-card">
             <img src={item.img} alt={item.name} />
-            <h3>{truncateName(item.name)}</h3>
-            <p>{item.price}</p>
-            <p>{"⭐".repeat(item.stars)}</p>
-            <a href={item.link} target="_blank" rel="noopener noreferrer">
+            <h3 className="mt-2 text-black">{truncateName(item.name)}</h3>
+            <p className="text-black">{item.price}</p>
+            <p className="mt-2">{"⭐".repeat(item.stars)}</p>
+            <a className='text-orange-400 'href={item.link} target="_blank" rel="noopener noreferrer">
               Buy Now
             </a>
           </div>
         ))}
       </div>
       <div className="button-group">
-        <button onClick={handlePrevious} disabled={currentIndex === 0}>
+        <button className="bg-orange-400 text-white rounded-full py-2 px-4 hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all duration-300" onClick={handlePrevious} disabled={currentIndex === 0}>
           Previous
         </button>
-        <button onClick={handleRetry}>Retry</button>
+        <button className="bg-orange-400 text-white rounded-full py-2 px-4 hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all duration-300" onClick={handleRetry}>Retry</button>
       </div>
     </div>
   );

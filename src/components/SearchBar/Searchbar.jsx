@@ -34,11 +34,11 @@ const Searchbar = ({ setExternalSearchTerm }) => {
   }, [setExternalSearchTerm]);
 
   return (
-    <div ref={menuRef} className="w-full max-w-full px-4 py-2">
-      <div className="flex items-center gap-2">
+    <div ref={menuRef} className="w-full max-w-full  mt-5">
+      <div className="flex items-center gap-1">
         <input
           type="text"
-          className="outline-none border border-gray-300 rounded-full py-2 px-4 w-full text-lg text-gray-700 placeholder-gray-400 focus:ring-0"
+          className="outline-none border border-gray-300 rounded-full py-2 px-4 w-72 text-lg text-gray-700 placeholder-gray-400 focus:ring-0"
           placeholder="Search"
           value={searchTerm}
           onChange={handleChange}

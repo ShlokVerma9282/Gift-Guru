@@ -14,14 +14,20 @@ import {
   Button,
 } from "./Forms";
 import Carousel from "../Carousel/Slider";
-import GiftProducts from "./GiftProducts";
-import Geocode from "./Geocode";
+import GiftProducts from "../GenerateGiftIdeas/GiftProducts";
+import Searchbar from "../SearchBar/Searchbar";  // Import Searchbar
+// import Geocode from "./Geocode";
 
 const Intro = () => {
   const [showGiftProducts, setShowGiftProducts] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
 
   const handleButtonClick = () => {
     setShowGiftProducts(true);
+  };
+
+  const handleReviewClick = (review) => {
+    setSearchTerm(review);
   };
 
   return (
@@ -55,7 +61,7 @@ const Intro = () => {
             <img src={messenger} alt="" className="transform scale-50 hover:scale-75" />
           </div>
           <div className="max-w-2xl p-2 bg-white shadow-md rounded-md">
-            <Carousel />
+            <Carousel onReviewClick={handleReviewClick} />
           </div>
         </div>
         
@@ -69,6 +75,9 @@ const Intro = () => {
             <CategorySelectionForm />
             <PriceRangeInput />
             <Button onClick={handleButtonClick} /> 
+            <div className="mt-10">
+        <Searchbar setExternalSearchTerm={searchTerm} />
+      </div>
           </div>
         </div>
       </div>
@@ -76,26 +85,25 @@ const Intro = () => {
       {/* GiftProducts container */}
       {showGiftProducts && (
         <div>
-        <div className="flex ml-10 mr-10 p-8 bg-white shadow-md rounded-md" style={{ height: "60vh", width: "175vh" }}>
-          {/* Left section with GiftProducts */}
-          <div className="flex flex-col flex-1 w-1/2 pr-20">
-            <GiftProducts />
-          </div>
+          <div className="flex ml-10 mr-10 p-8 bg-white shadow-md rounded-md" style={{ height: "70vh", width: "175vh" }}>
+            {/* Left section with GiftProducts */}
+            <div className="flex flex-col flex-1 w-1/2 pr-20">
+              <GiftProducts />
+            </div>
       
-          {/* Vertical line */}
-          <div className="border-l-2 border-orange-400"></div>
+            {/* Vertical line */}
+            <div className="border-l-2 border-orange-400"></div>
       
-          {/* Right section with Geocode */}
-          <div className="flex flex-col flex-1 w-1/2 pl-20">
-            <Geocode />
+            {/* Right section with Geocode */}
+            <div className="flex flex-col flex-1 w-1/2 pl-20">
+              {/* <Geocode /> */}
+            </div>
           </div>
         </div>
-      </div>
+      )}
       
-  
-  
-
-)}
+      {/* Searchbar below the GiftIdeas button */}
+    
     </div>
   );
 };

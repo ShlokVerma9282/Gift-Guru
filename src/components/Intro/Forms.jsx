@@ -237,41 +237,37 @@ const Button = ({ onClick }) => {
 };
 
 const RecipientForm = () => {
-  const [recipient, setRecipient] = useState("");
+  const [recipientType, setRecipientType] = useState("");
 
-  const handleRecipientChange = (event) => {
-    setRecipient(event.target.value);
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log("Recipient:", recipient);
-    setRecipient("");
+  const handleRecipientChange = (e) => {
+    setRecipientType(e.target.value);
   };
 
   return (
     <div className="max-w-md mx-auto p-4">
-      <label htmlFor="recipient" className="text-m font-semibold mb-3 open-sans-regular">
-        Enter the Recipient Name:
-      </label>
-      <input
-        id="recipient"
-        name="recipient"
-        type="text"
-        value={recipient}
+      <h1 className="text-m font-semibold mb-3 open-sans-regular">Recipient Type:</h1>
+      <select
+        className="block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+        value={recipientType}
         onChange={handleRecipientChange}
-        className="block w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-indigo-500"
-      />
-      <button
-        type="submit"
-        className="mt-4 w-full bg-orange-400 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-        onClick={handleSubmit}
       >
-        Submit
-      </button>
+        <option value="">Select Recipient Type</option>
+        <option value="Mother">Mother</option>
+        <option value="Father">Father</option>
+        <option value="Lover">Lover</option>
+        <option value="Wife">Wife</option>
+        <option value="Brother">Brother</option>
+        <option value="Sister">Sister</option>
+        <option value="Friend">Friend</option>
+        <option value="Relatives">Relatives</option>
+        {/* Add more options as needed */}
+      </select>
     </div>
   );
 };
+
+
+
 
 export {
   GenderInputForm,

@@ -14,9 +14,9 @@ import {
   Button,
 } from "./Forms";
 import Carousel from "../Carousel/Slider";
-import GiftProducts from "../GenerateGiftIdeas/GiftProducts";
+import GiftProducts from "./GiftProducts";
 import Searchbar from "../SearchBar/Searchbar";  // Import Searchbar
-// import Geocode from "./Geocode";
+import Geocode from "./Geocode";
 
 const Intro = () => {
   const [showGiftProducts, setShowGiftProducts] = useState(false);
@@ -96,7 +96,7 @@ const Intro = () => {
       
             {/* Right section with Geocode */}
             <div className="flex flex-col flex-1 w-1/2 pl-20">
-              {/* <Geocode /> */}
+              <Geocode /> 
             </div>
           </div>
         </div>

@@ -13,6 +13,7 @@ import {
   RecipientForm,
   Button,
 } from "./Forms";
+import GiftForm from "./GiftForm";
 import Carousel from "../Carousel/Slider";
 import GiftProducts from "./GiftProducts";
 import Searchbar from "../SearchBar/Searchbar";  // Import Searchbar
@@ -68,13 +69,7 @@ const Intro = () => {
         {/* right image side */}
         <div className="flex flex-1 relative">
           <div className="max-w-2xl ml-10 p-8 bg-white shadow-md rounded-md">
-            <GenderInputForm />
-            <AgeRangeForm />
-            <EventTypeInputForm />
-            <RecipientForm />
-            <CategorySelectionForm />
-            <PriceRangeInput />
-            <Button onClick={handleButtonClick} /> 
+            <GiftForm />
             <div className="mt-10">
         <Searchbar setExternalSearchTerm={searchTerm} />
       </div>

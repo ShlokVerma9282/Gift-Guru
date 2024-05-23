@@ -8,6 +8,8 @@ import Amazon2 from "../../img/amazon2.jpg";
 import Amazon3 from "../../img/amazon3.jpg";
 import Amazon4 from "../../img/amazon4.jpg";
 import Amazon5 from "../../img/amazon5.jpg";
+import Amazon6 from "../../img/amazon6.jpg";
+import Amazon7 from "../../img/amazon7.jpg";
 
 const settings = {
     dots: true,
@@ -21,39 +23,55 @@ const settings = {
 
 const data = [
     {
-      name: Clara 925 Sterling Silver Heart Pendant Necklace | With or Without Chain | Gift for Women and Girls,
+        name: `JUGTE Motivational Water Bottle 1 litre Sipper Bottle For Adults With Time Measurement Non-Toxic Water bottle for office,Water bottle for gym (Pink) |Plastic`,
+        img: Amazon6,
+        price: `₹383`,
+        stars: 4, // Placeholder for star rating
+        link: `https://www.amazon.in/JUGTE-Motivational-Water-Bottle-Measurement/dp/B0C3ZNLC5Y?crid=1VVOK24XAXRMW&dib=eyJ2IjoiMSJ9.5kzsTg3MZkHwI_qKqbWQXsT1-uUOQhY_LEgAteD05rHsQXxL3_T0TAAwOtkwsNBtyRX0mnoMt-KVU3bP5kKaNXObBfpP6g-be1cITyFoJcpbYp91jnNg-CRayBR378g84UQYrDomlX9yioQQZ6ZJdyrYoD389Hy7KAMDBmR6-c7kle4hzqb40VkPWFGXBSQLMe0VvG4pFKDv_L0xfeLqeBLSWrQk0bQC93jeItr88XwXe1pW0NwGN0NTTScJQqg6-9ReP0KAIxnNLDkcs1QnAj4kBGMxRgv2W31OUZwa2tw.HaAXHIrKxq1j9VsZ0N6Z5cwU1QE0ijlwluOUClWB8ns&dib_tag=se&keywords=water%2Bbottle%2Bfor%2Bhome&qid=1716447784&refinements=p_n_format_browse-bin%3A19560801031&rnid=14277549031&s=kitchen&sprefix=waterb%2Caps%2C194&sr=1-3-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&th=1&linkCode=ll1&tag=genaigifts-21&linkId=cc345d67672a52a69fcbe7521f6254ea&language=en_IN&ref_=as_li_ss_tl`
+    },
+    {
+      name: `Clara 925 Sterling Silver Heart Pendant Necklace | With or Without Chain | Gift for Women and Girls`,
       img: Amazon1,
-      price: ₹2057,
+      price: `₹2057`,
       stars: 4, // Placeholder for star rating
-      link: https://www.amazon.in/Sterling-Pendant-Necklace-Rhodium-Zirconia/dp/B09XNB3DZX?pf_rd_p=9e034799-55e2-4ab2-b0d0-eb42f95b2d05&pf_rd_r=24T4YV94DEENMF2GX90W&linkCode=ll1&tag=genaigifts-21&linkId=28813b7cfe29d1353c36425292578222&language=en_IN&ref_=as_li_ss_tl    },
+      link: `https://www.amazon.in/Sterling-Pendant-Necklace-Rhodium-Zirconia/dp/B09XNB3DZX?pf_rd_p=9e034799-55e2-4ab2-b0d0-eb42f95b2d05&pf_rd_r=24T4YV94DEENMF2GX90W&linkCode=ll1&tag=genaigifts-21&linkId=28813b7cfe29d1353c36425292578222&language=en_IN&ref_=as_li_ss_tl`
+    },
     {
-      name: ZAVERI PEARLS Set Of 2 Rose Gold Dazzling Austrian Diamonds Bracelet For Women-ZPFK16864,
+      name: `ZAVERI PEARLS Set Of 2 Rose Gold Dazzling Austrian Diamonds Bracelet For Women-ZPFK16864`,
       img: Amazon2,
-      price: ₹488,
+      price: `₹488`,
       stars: 4, // Placeholder for star rating
-      link: https://www.amazon.in/ZAVERI-PEARLS-Dazzling-Austrian-Women-ZPFK16864/dp/B0CLJL9FCS?crid=2Y3Z8AIMY85S2&dib=eyJ2IjoiMSJ9.-08jI0CCEQ0UGh_eZ1-uAPgdruXKIc-xehk23PqNzQ5IJYCbiJdjK0O8sO5FLeeRSb0WPoQTBuKr4Xt6yb9ZYX623GJEhnijsSENZYiNH8pchySgxVk2qN7d2QI2EnxPEbYcg9XzCbM_llNV2Pk9JROct5X9M8f4pO4tJQk-DIBSw9hyphjyqnv5fIXEgT4A7QFrUk7oFH6w7TbBmm5Er68zroACz4e5k3qU5zD6FYoX2n2r-3MPdkTg3vy3T3wUGKlGIcS7zh8AygAZBiAJMvsfzT_jzvYlaqMGfmcywDo.u4sEpLdDtYtejLHBYlTBZ32ELLjedHiSRl0GfyX6iks&dib_tag=se&keywords=women+jewellery&qid=1716056381&s=jewelry&sprefix=women+%2Cjewelry%2C224&sr=1-7&linkCode=ll1&tag=genaigifts-21&linkId=4f075341f7bc9e052814dabd7f84225a&language=en_IN&ref_=as_li_ss_tl
+      link: `https://www.amazon.in/ZAVERI-PEARLS-Dazzling-Austrian-Women-ZPFK16864/dp/B0CLJL9FCS?crid=2Y3Z8AIMY85S2&dib=eyJ2IjoiMSJ9.-08jI0CCEQ0UGh_eZ1-uAPgdruXKIc-xehk23PqNzQ5IJYCbiJdjK0O8sO5FLeeRSb0WPoQTBuKr4Xt6yb9ZYX623GJEhnijsSENZYiNH8pchySgxVk2qN7d2QI2EnxPEbYcg9XzCbM_llNV2Pk9JROct5X9M8f4pO4tJQk-DIBSw9hyphjyqnv5fIXEgT4A7QFrUk7oFH6w7TbBmm5Er68zroACz4e5k3qU5zD6FYoX2n2r-3MPdkTg3vy3T3wUGKlGIcS7zh8AygAZBiAJMvsfzT_jzvYlaqMGfmcywDo.u4sEpLdDtYtejLHBYlTBZ32ELLjedHiSRl0GfyX6iks&dib_tag=se&keywords=women+jewellery&qid=1716056381&s=jewelry&sprefix=women+%2Cjewelry%2C224&sr=1-7&linkCode=ll1&tag=genaigifts-21&linkId=4f075341f7bc9e052814dabd7f84225a&language=en_IN&ref_=as_li_ss_tl`
     },
     {
-      name: Lymio Men Cargo || Men Cargo Pants || Men Cargo Pants Cotton || Cargos for Men (Cargo-01-04),
+      name: `Lymio Men Cargo || Men Cargo Pants || Men Cargo Pants Cotton || Cargos for Men (Cargo-01-04)`,
       img: Amazon3,
-      price: ₹649,
+      price: `₹649`,
       stars: 3.8, // Placeholder for star rating
-      link: https://www.amazon.in/Lymio-Cargo-Cotton-Cargos-Cargo-01-04/dp/B0CTQCP2BZ?crid=33PG2ACNJYYWI&dib=eyJ2IjoiMSJ9.kRgEYwRxnS_S6jIfPMaFcKCDA69yXX0c9L-QQH1yHIn2l80RZjd0_E2IX5Ho7bx97DHeM0uv7N2sKko6K9RrwsnZ7Nwa0-YbWgHvmG9F1gukx_VxT5qFMe74c3AgLnjfwDLP9PI7LEkmpmb91FnW0XCb8MyDQ_xzatZJ6jwrHBZrhUOyccXs4cNHFBeS3Qy2o-9Qjglii30blV3zGKT8KqIcSK4ytwdn2jjeLUcauzPtbVe0YCaHJ59W61GY78qrH5wrQt7CK63mDPJKyObFKnOZwLQi7hjg90T3RW3A1U.TqVc0px-xuylrC1TJzAh3Mt_pgNdHBWCBXjDYk64mXQ&dib_tag=se&keywords=mens+clothes&qid=1716056501&sprefix=mens+clothes%2Caps%2C217&sr=8-5&linkCode=ll1&tag=genaigifts-21&linkId=0efcb1532f519fd1b355611d89056d28&language=en_IN&ref=as_li_ss_tl
+      link: `https://www.amazon.in/Lymio-Cargo-Cotton-Cargos-Cargo-01-04/dp/B0CTQCP2BZ?crid=33PG2ACNJYYWI&dib=eyJ2IjoiMSJ9.kRgEYwRxnS_S6jIfPMaFcKCDA69yXX0c9L-QQH1yHIn2l80RZjd0_E2IX5Ho7bx97DHeM0uv7N2sKko6K9RrwsnZ7Nwa0-YbWgHvmG9F1gukx_VxT5qFMe74c3AgLnjfwDLP9PI7LEkmpmb91FnW0XCb8MyDQ_xzatZJ6jwrHBZrhUOyccXs4cNHFBeS3Qy2o-9Qjglii30blV3zGKT8KqIcSK4ytwdn2jjeLUcauzPtbVe0YCaHJ59W61GY78qrH5wrQt7CK63mDPJKyObFKnOZwLQi7hjg90T3RW3A1U.TqVc0px-xuylrC1TJzAh3Mt_pgNdHBWCBXjDYk64mXQ&dib_tag=se&keywords=mens+clothes&qid=1716056501&sprefix=mens+clothes%2Caps%2C217&sr=8-5&linkCode=ll1&tag=genaigifts-21&linkId=0efcb1532f519fd1b355611d89056d28&language=en_IN&ref=as_li_ss_tl
+      `
     },
     {
-      name: Nintendo Switch OLED model With Neon Red & Neon Blue Joy-Con,
+      name: `Nintendo Switch OLED model With Neon Red & Neon Blue Joy-Con`,
       img: Amazon4,
-      price: ₹31,999,
+      price: `₹31,999`,
       stars: 4.5, // Placeholder for star rating
-      link: https://www.amazon.in/Nintendo-Switch-OLED-model-Neon/dp/B098TNW7NM?dib=eyJ2IjoiMSJ9.C_IOajk15GzS7oXe9Ii-Rtr1KC5BSqqKg0HqWmNhkUu_1kXGvt2ouvQqF43fCf4n1Vk9Fs69OVEyiOYe_eG04THiVguNca3dqVPWDj7Q3VVhXvujrBk67nUJUXvH5_1On7RGyRPeNxJQVR1VT9h_lV53pDZ3UE7iOnx-VEAwfkrVWIACiWVYTl36ZVvGLAg-2mnYw83SQZv02vwxPvDDhO--7S6PL_vICIbAO8e6cLo.AmPVnhjajngn8Xcm0PewbdniPyvsdjAQZGz5lnbIkn4&dib_tag=se&keywords=nintendo+switch&qid=1716056620&sr=8-1&linkCode=ll1&tag=genaigifts-21&linkId=b14a14413206b1dc6cdef452c6a17c34&language=en_IN&ref_=as_li_ss_tl
+      link: `https://www.amazon.in/Nintendo-Switch-OLED-model-Neon/dp/B098TNW7NM?dib=eyJ2IjoiMSJ9.C_IOajk15GzS7oXe9Ii-Rtr1KC5BSqqKg0HqWmNhkUu_1kXGvt2ouvQqF43fCf4n1Vk9Fs69OVEyiOYe_eG04THiVguNca3dqVPWDj7Q3VVhXvujrBk67nUJUXvH5_1On7RGyRPeNxJQVR1VT9h_lV53pDZ3UE7iOnx-VEAwfkrVWIACiWVYTl36ZVvGLAg-2mnYw83SQZv02vwxPvDDhO--7S6PL_vICIbAO8e6cLo.AmPVnhjajngn8Xcm0PewbdniPyvsdjAQZGz5lnbIkn4&dib_tag=se&keywords=nintendo+switch&qid=1716056620&sr=8-1&linkCode=ll1&tag=genaigifts-21&linkId=b14a14413206b1dc6cdef452c6a17c34&language=en_IN&ref_=as_li_ss_tl`
     },
     {
-      name: GoSriKi Women Kurta with Pant,
+      name: `GoSriKi Women Kurta with Pant`,
       img: Amazon5,
-      price: ₹489,
+      price: `₹489`,
       stars: 3, // Placeholder for star rating
-      link: https://www.amazon.in/GoSriKi-Womens-Straight-Printed-ANAAR-Beige-GS_S_Beige_Small/dp/B0CWZYRM3G?crid=RZ42JCRGZFBD&dib=eyJ2IjoiMSJ9.wCKoEdhhpuLBA1dLUiyhyyGhfpYdXr_IX_xRKlTLf4rntZ-CJIjRijX2VT2U3qQmo3gTUcK7JBlRIB4cASujbhsBQhbbJTNQOg1Mlb-EpKR3knEXQnY9Fbwn_atbD_vjfZebikO6n1vxZ8Pra3NCje4exNQ0Rj5avFAyRZS7Ld61o1Yu1qzS-cfBtpbyQw3nfOLfMqByzj5mJ4zmS2nGAMffvsG6onlArMvCbeZCxVWTOsR41MPxFO81ypeWIyy43D8CrMxShj5rOlWy14hylUrDq3m74NoeHXQlAkXzD9k.s6NWK-ZTlKvKULQn4JrE0l-pmI-fIDNaOTzoqPPK8CI&dib_tag=se&keywords=women+clothes&qid=1716056699&sprefix=women+clothe%2Caps%2C228&sr=8-5&linkCode=ll1&tag=genaigifts-21&linkId=2a225fb44b87816b95e9d79ce3d92098&language=en_IN&ref_=as_li_ss_tl
-    },
+      link: `https://www.amazon.in/GoSriKi-Womens-Straight-Printed-ANAAR-Beige-GS_S_Beige_Small/dp/B0CWZYRM3G?crid=RZ42JCRGZFBD&dib=eyJ2IjoiMSJ9.wCKoEdhhpuLBA1dLUiyhyyGhfpYdXr_IX_xRKlTLf4rntZ-CJIjRijX2VT2U3qQmo3gTUcK7JBlRIB4cASujbhsBQhbbJTNQOg1Mlb-EpKR3knEXQnY9Fbwn_atbD_vjfZebikO6n1vxZ8Pra3NCje4exNQ0Rj5avFAyRZS7Ld61o1Yu1qzS-cfBtpbyQw3nfOLfMqByzj5mJ4zmS2nGAMffvsG6onlArMvCbeZCxVWTOsR41MPxFO81ypeWIyy43D8CrMxShj5rOlWy14hylUrDq3m74NoeHXQlAkXzD9k.s6NWK-ZTlKvKULQn4JrE0l-pmI-fIDNaOTzoqPPK8CI&dib_tag=se&keywords=women+clothes&qid=1716056699&sprefix=women+clothe%2Caps%2C228&sr=8-5&linkCode=ll1&tag=genaigifts-21&linkId=2a225fb44b87816b95e9d79ce3d92098&language=en_IN&ref_=as_li_ss_tl`
+    },
+    {
+        name: `Bzkid Rolling Banana Monkey Toys with Voice/Touch Sensor On Dancing Monkey Dancing Toy for Kids Rolling Electric Monkey for Children Doll Tumble Monkey Toy with Sound&Light Effects - Multi Color`,
+        img: Amazon7,
+        price: `₹298`,
+        stars: 4, // Placeholder for star rating
+        link: `https://www.amazon.in/Bzkid-Rolling-Electric-Children-Approved/dp/B08KYFC73S?encoding=UTF8&content-id=amzn1.sym.5b1720c0-c35f-4667-9cac-16e3175f300d&dib=eyJ2IjoiMSJ9.NEwbuc42xtGJOMtoX5u67rRRNvMJpecvacTOWvNdKCzKPdc7zg5cg_NcVwKirRwcCO470jJWSUVpyJWdPKF5FC74-hqKtBhK9VZ7NoGoNVIL7eZtCkoEJ67J3X-yuLkyAqfO_IKYrHoFQED-vqdOVSwX3c7C7FPuV8sGRSShi3T9g7mhwxfsp96MPKURJ4exERPXo7CfJdMw59N9-hwQeh6PyYmnPlI--b2gfJ9O8g8s3ny6lGklv1aUUKz0SINOY9G8P5q_XPFFh81JrkU80EnKgOyMMM8ysTdm9PDVg.ocR4MNS6-dI0SewLJ-k3UNEdp9WsHtQ_lfPOQSrNJvQ&dib_tag=se&pd_rd_r=a0863f29-f43b-460f-ac74-b18d8418e648&pd_rd_w=3nZi2&pd_rd_wg=GKmdC&pf_rd_p=5b1720c0-c35f-4667-9cac-16e3175f300d&pf_rd_r=A7VF9ZMJXQD54E5BGHGX&qid=1716448080&refinements=p_n_format_browse-bin%3A30678570031%2Cp_n_age_range%3A1480705031&rnid=1480704031&s=toys&sr=1-18&linkCode=ll1&tag=genaigifts-21&linkId=f3892102e6288c8adbbf8c8f0f6e333e&language=en_IN&ref=as_li_ss_tl`
+    },
 ];
 
 const truncateName = (name, maxLength) => {

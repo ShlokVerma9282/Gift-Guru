@@ -4,7 +4,7 @@ import ProductCarousel from "./ProductCarousel";
 
 const Portfolio = () => {
   return (
-    <div className="flex flex-col items-center justify-center h-[70vh] mt-10" id="portfolio">
+    <div className="flex flex-col items-center justify-center h-[70vh] mt-24 " id="portfolio">
       {/* heading */}
       <span className="text-black text-2xl font-bold fuzzy-bubbles-bold">Recent Selections</span>
       <span className="text-orange-500 text-2.5xl font-bold fuzzy-bubbles-bold">Best Buys</span>

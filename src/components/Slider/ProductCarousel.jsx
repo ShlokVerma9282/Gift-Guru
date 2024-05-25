@@ -2,7 +2,7 @@
 
 
 
-import React from 'react';
+import React, { useState } from 'react';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
@@ -164,6 +164,12 @@ const data = [
 ];
 
 const ProductCarousel = () => {
+    const [showFullNames, setShowFullNames] = useState(false);
+
+    const toggleShowFullNames = () => {
+        setShowFullNames(!showFullNames);
+    };
+
     return (
         <div className="product-carousel">
             <Slider {...settings}>
@@ -171,17 +177,27 @@ const ProductCarousel = () => {
                     <div key={index} className="product-card">
                         <img src={product.img} alt={product.name} />
                         <div className="product-info">
-                            <h3>{product.name}</h3>
+                            <h3>
+                                {showFullNames 
+                                    ? product.name 
+                                    : product.name.split(' ').slice(0, 2).join(' ') + (product.name.split(' ').length > 2 ? '...' : '')
+                                }
+                                  
+                            </h3>
+                            <div><button onClick={toggleShowFullNames} className="read-more-button text-orange-400">
+                            {showFullNames ? "Show Less" : "Read More"}
+                        </button></div>
                             <p>Price: {product.price}</p>
                             <p>
-    Rating: 
-    {[...Array(Math.round(product.stars))].map((_, i) => (
-        <span key={i} className="text-yellow-500">&#9733;</span>
-    ))}
-</p>
-
-                            <a href={product.link} target="_blank" rel="noopener noreferrer">View Product</a>
+                                Rating: 
+                                {[...Array(Math.round(product.stars))].map((_, i) => (
+                                    <span key={i} className="text-yellow-500">&#9733;</span>
+                                ))}
+                            </p>
+                                               
+                      <div>  <a href={product.link} target="_blank" rel="noopener noreferrer" className='text-orange-400'>View Product</a></div>
                         </div>
+  
                     </div>
                 ))}
             </Slider>

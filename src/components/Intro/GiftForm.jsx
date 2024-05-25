@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-const GiftForm = ({ onGenerateGiftIdeas }) => {
+const GiftForm = ({ onGenerateGiftIdeas, onFormDataChange }) => {
   const [formData, setFormData] = useState({
     age: "",
     gender: "",
@@ -18,17 +18,19 @@ const GiftForm = ({ onGenerateGiftIdeas }) => {
       ...prevData,
       [name]: value
     }));
+    onFormDataChange({ ...formData, [name]: value });
   };
 
   const handleCheckboxChange = (e) => {
     const { name, checked } = e.target;
-    setFormData((prevData) => {
-      if (checked) {
-        return { ...prevData, categories: [...prevData.categories, name] };
-      } else {
-        return { ...prevData, categories: prevData.categories.filter(category => category !== name) };
-      }
-    });
+    const updatedCategories = checked
+      ? [...formData.categories, name]
+      : formData.categories.filter((category) => category !== name);
+    setFormData((prevData) => ({
+      ...prevData,
+      categories: updatedCategories
+    }));
+    onFormDataChange({ ...formData, categories: updatedCategories });
   };
 
   const handleSubmit = async (e) => {
@@ -38,25 +40,10 @@ const GiftForm = ({ onGenerateGiftIdeas }) => {
 
   const generateGiftIdeas = async () => {
     try {
-      const response = await axios.post(
-        "http://localhost:5000/generate_gift_idea",
-        formData
-      );
+      const response = await axios.post("http://localhost:5000/generate_gift_idea", formData);
       onGenerateGiftIdeas(response.data.gift_ideas, "");
     } catch (error) {
       onGenerateGiftIdeas([], "Error generating gift ideas");
-    }
-  };
-
-  const searchGiftIdeas = async () => {
-    try {
-      const response = await axios.post(
-        "http://localhost:5000/search_gift_idea",
-        { prompt: formData.prompt }
-      );
-      onGenerateGiftIdeas(response.data.gift_ideas, "");
-    } catch (error) {
-      onGenerateGiftIdeas([], "Error searching gift ideas");
     }
   };
 
@@ -64,6 +51,7 @@ const GiftForm = ({ onGenerateGiftIdeas }) => {
     <div className="m-4">
       <h1 className="text-xl font-bold mb-4">Gift Guru</h1>
       <form onSubmit={handleSubmit}>
+        {/* Form fields */}
         <div className="mb-4">
           <label htmlFor="age" className="text-m font-semibold mb-3 block open-sans-regular">
             Age Range:
@@ -216,30 +204,27 @@ const GiftForm = ({ onGenerateGiftIdeas }) => {
           <label htmlFor="prompt" className="text-m font-semibold mb-3 block open-sans-regular">
             Prompt:
           </label>
-          <input
-            type="text"
+          <textarea
             id="prompt"
             name="prompt"
+            className="block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-orange-400 focus:border-orange-400"
             value={formData.prompt}
             onChange={handleChange}
-            className="block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-orange-400 focus:border-orange-400"
           />
         </div>
-        <div className="mb-4">
+        <div className="flex justify-between">
           <button
             type="submit"
-            className="px-4 py-2 bg-orange-500 text-white rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-400"
+            className="bg-orange-500 text-white px-4 py-2 rounded-md hover:bg-orange-600"
           >
-            Generate Gift Ideas
+            Submit
           </button>
-        </div>
-        <div className="mb-4">
           <button
             type="button"
-            onClick={searchGiftIdeas}
-            className="px-4 py-2 bg-gray-500 text-white rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-gray-400"
+            onClick={generateGiftIdeas}
+            className="bg-orange-500 text-white px-4 py-2 rounded-md hover:bg-orange-600"
           >
-            Search Gift Ideas
+            Generate More
           </button>
         </div>
       </form>

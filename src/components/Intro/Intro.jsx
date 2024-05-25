@@ -11,6 +11,8 @@ import GiftProducts from "./GiftProducts";
 import Searchbar from "../SearchBar/Searchbar";
 import Geocode from "./Geocode";
 
+const ITEMS_PER_PAGE = 3;
+
 const Intro = () => {
   const [showGiftProducts, setShowGiftProducts] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
@@ -18,26 +20,42 @@ const Intro = () => {
   const [error, setError] = useState("");
   const [showGiftIdeasContainer, setShowGiftIdeasContainer] = useState(false);
   const [currentPage, setCurrentPage] = useState(0);
-  const [itemsPerPage] = useState(5);
+  const [isLoadingMore, setIsLoadingMore] = useState(false);
+  const [formData, setFormData] = useState(null);
 
-  const handleButtonClick = () => {
-    setShowGiftProducts(true);
-  };
+  const handleButtonClick = () => setShowGiftProducts(true);
 
-  const handleReviewClick = (review) => {
-    setSearchTerm(review);
-  };
+  const handleReviewClick = (review) => setSearchTerm(review);
 
   const handleGenerateGiftIdeas = (ideas, error) => {
-    console.log("Generated gift ideas:", ideas); // Debugging line
     setGiftIdeas(ideas);
     setError(error);
     setShowGiftIdeasContainer(true);
-    setCurrentPage(0); // Reset to first page on new ideas
+    setCurrentPage(0);
+  };
+
+  const handleFormDataChange = (data) => {
+    setFormData(data);
+  };
+
+  const handleGenerateMore = async () => {
+    if (!formData) {
+      setError("Form data is missing");
+      return;
+    }
+    setIsLoadingMore(true);
+    try {
+      const response = await axios.post("http://localhost:5000/generate_more_gift_ideas", formData);
+      setGiftIdeas([...giftIdeas, ...response.data.gift_ideas]);
+      setError("");
+    } catch (error) {
+      setError("Error generating more gift ideas");
+    }
+    setIsLoadingMore(false);
   };
 
   const handleNextPage = () => {
-    if ((currentPage + 1) * itemsPerPage < giftIdeas.length) {
+    if ((currentPage + 1) * ITEMS_PER_PAGE < giftIdeas.length) {
       setCurrentPage(currentPage + 1);
     }
   };
@@ -48,18 +66,8 @@ const Intro = () => {
     }
   };
 
-  const handleGenerateMore = async () => {
-    // Assuming you have a function to fetch more gift ideas
-    try {
-      const response = await axios.post('http://localhost:5000/generate_more_gift_ideas', { currentIdeas: giftIdeas });
-      setGiftIdeas([...giftIdeas, ...response.data.gift_ideas]);
-    } catch (error) {
-      setError('Error generating more gift ideas');
-    }
-  };
-
-  const startIndex = currentPage * itemsPerPage;
-  const displayedIdeas = giftIdeas.slice(startIndex, startIndex + itemsPerPage);
+  const startIndex = currentPage * ITEMS_PER_PAGE;
+  const displayedIdeas = giftIdeas.slice(startIndex, startIndex + ITEMS_PER_PAGE);
 
   return (
     <div>
@@ -95,7 +103,7 @@ const Intro = () => {
 
         <div className="flex flex-1 relative">
           <div className="max-w-2xl ml-10 p-8 bg-white shadow-md rounded-md">
-            <GiftForm onGenerateGiftIdeas={handleGenerateGiftIdeas} />
+            <GiftForm onGenerateGiftIdeas={handleGenerateGiftIdeas} onFormDataChange={handleFormDataChange} />
             <div className="mt-10">
               <Searchbar setExternalSearchTerm={searchTerm} />
             </div>
@@ -104,7 +112,7 @@ const Intro = () => {
       </div>
 
       {showGiftIdeasContainer && (
-        <div className="w-12/12 ml-10 mr-10 h-80 bg-orange-400 text-white p-4">
+        <div className=" ml-10 mr-10  bg-white text-black p-4 shadow-md rounded-md" style={{ height: "40vh", width: "175vh" }}>
           {error && <p>{error}</p>}
           <ul>
             {displayedIdeas.map((idea, index) => (
@@ -114,16 +122,16 @@ const Intro = () => {
             ))}
           </ul>
           <div className="flex justify-between mt-4">
-            <button onClick={handlePreviousPage} disabled={currentPage === 0} className="bg-white text-orange-400 px-4 py-2 rounded">
+            <button onClick={handlePreviousPage} disabled={currentPage === 0} className="bg-orange-400 text-white px-4 py-2 rounded">
               Previous
             </button>
-            <button onClick={handleNextPage} disabled={(currentPage + 1) * itemsPerPage >= giftIdeas.length} className="bg-white text-orange-400 px-4 py-2 rounded">
+            <button onClick={handleNextPage} disabled={(currentPage + 1) * ITEMS_PER_PAGE >= giftIdeas.length} className="bg-orange-400 text-white px-4 py-2 rounded">
               Next
             </button>
           </div>
           <div className="mt-4">
-            <button onClick={handleGenerateMore} className="bg-white text-orange-400 px-4 py-2 rounded">
-              Generate More
+            <button onClick={handleGenerateMore} className="bg-orange-400 text-white px-4 py-2 rounded" disabled={isLoadingMore}>
+              {isLoadingMore ? 'Loading...' : 'Generate More'}
             </button>
           </div>
         </div>

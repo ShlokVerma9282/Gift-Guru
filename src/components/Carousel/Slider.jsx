@@ -24,7 +24,7 @@ function Carousel({ onReviewClick }) {
             modifier: 1,
           }}
           autoplay={{
-            delay: 2500,
+            delay: 5000,
             disableOnInteraction: false,
           }}
           breakpoints={{
@@ -41,15 +41,16 @@ function Carousel({ onReviewClick }) {
         >
           {data.map((d, index) => (
             <SwiperSlide key={index} className="rounded-3xl">
+            <div className="hover:scale-105 transition-transform duration-300">
               <div className="flex justify-center items-center w-full mt-2">
                 <img
                   src={d.img}
                   alt=""
-                  className="items-center h-60 w-48 rounded-lg border-black cursor-pointer"
+                  className="items-center h-70 w-80 rounded-lg border-black cursor-pointer"
                   onClick={() => onReviewClick(d.review)}
                 />
               </div>
-
+          
               <div
                 className="bg-gray-50 h-22 w-full font-italic text-black rounded-xl flex flex-col items-center justify-center gap-7 mt-3 mb-2 border-black shadow-lg cursor-pointer"
                 onClick={() => onReviewClick(d.review)}
@@ -58,7 +59,10 @@ function Carousel({ onReviewClick }) {
                   {d.review}
                 </p>
               </div>
-            </SwiperSlide>
+            </div>
+          </SwiperSlide>
+          
+          
           ))}
         </Swiper>
         <div className="custom-pagination" style={{ marginTop: '40px', textAlign: 'center' }}></div>

@@ -1,38 +1,18 @@
 import React from "react";
-import "./Slider.css";
 import "swiper/css";
 import ProductCarousel from "./ProductCarousel";
 
-
 const Portfolio = () => {
-  
   return (
-    <div className="portfolio mt-10" id="portfolio">
+    <div className="flex flex-col items-center justify-center h-[70vh] mt-10" id="portfolio">
       {/* heading */}
-      <span className="fuzzy-bubbles-bold">Recent Selections</span>
-      <span className="fuzzy-bubbles-bold">Best Buys</span>
+      <span className="text-black text-2xl font-bold fuzzy-bubbles-bold">Recent Selections</span>
+      <span className="text-orange-500 text-2.5xl font-bold fuzzy-bubbles-bold">Best Buys</span>
 
       {/* slider */}
-      <div className="max-w-5xl mx-auto mt-10">
+      <div className="w-full max-w-5xl mx-auto mt-10">
         <ProductCarousel />
       </div>
-      {/*<Swiper
-        spaceBetween={30}
-        slidesPerView={3}
-        grabCursor={true}
-        className="portfolio-slider"
-      >
-        {products.map(product => (
-          <SwiperSlide key={product.id}>
-            <div className="product">
-              <img src={product.image} alt={product.title} />
-              <h3>{product.title}</h3>
-              <p>${product.price}</p>
-              <p>{product.description}</p>
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>*/}
     </div>
   );
 };

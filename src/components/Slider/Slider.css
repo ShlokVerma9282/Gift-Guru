@@ -1,40 +1,55 @@
-.portfolio {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  height: 70vh;
-
-}
-/* heading */
-.portfolio span:nth-of-type(1) {
-  color: var(--black);
-  font-size: 2rem;
-  font-weight: bold;
+.product-carousel {
+    width: 80%;
+    margin: 0 auto;
 }
 
-.portfolio span:nth-of-type(2) {
-  color: var(--orange);
-  font-size: 2.5rem;
-  font-weight: bold;
+.product-card {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+    background-color: #fff;
 }
 
-/* slider */
-.portfolio .swiper{
-    overflow: visible!important;
+.product-card img {
+    height: 300px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
 }
 
-.portfolio-slider {
-  margin-top: 3rem;
-  width: 100%;
+.product-info h3 {
+    font-size: 1.1em;
+    margin-bottom: 10px;
 }
 
-.portfolio-slider .swiper-slide {
-  width: 20rem;
-}
-.portfolio img {
-  width: 19rem;
-  filter: drop-shadow(-12px 15px 13px rgba(0, 0, 0, 0.25));
-  border-radius: 19px;
+.product-info p {
+    margin: 5px 0;
 }
 
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gap-1 {
+    gap: 0.25rem;
+}
+
+.h-4 {
+    height: 1rem;
+}
+
+.w-4 {
+    width: 1rem;
+}
+
+.fill-current {
+    fill: currentColor;
+}
+
+.text-yellow-400 {
+    color: #fbbf24; /* Tailwind yellow-400 */
+}

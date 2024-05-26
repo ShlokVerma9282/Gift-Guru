@@ -86,3 +86,8 @@
 
 
 
+
+
+.s-blur1 {
+  filter: blur(5px);
+}

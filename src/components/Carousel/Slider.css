@@ -12,32 +12,29 @@
 
 .slick-prev:before,
 .slick-next:before {
-  color: orangered !important; /* Apply orangered color to the arrows */
-  font-size: 24px; /* Increase the font size of the arrows */
+  color: orangered !important;
+  font-size: 24px;
 }
 
 .slick-dots {
-  bottom: -30px; /* Adjust position of the dots */
+  bottom: -30px;
 }
 
 .slick-prev,
 .slick-next {
   z-index: 1;
-  width: 50px; /* Increase width for easier clicking */
-  height: 50px; /* Increase height for easier clicking */
+  width: 50px;
+  height: 50px;
 }
 
 .slick-prev {
-  left: -60px; /* Adjust position of the previous button */
+  left: -60px;
 }
 
 .slick-next {
-  right: -60px; /* Adjust position of the next button */
+  right: -60px;
 }
 
 .swiper-slide-shadow-left, .swiper-slide-shadow-right {
   background-image: none !important;
 }
-
-
-

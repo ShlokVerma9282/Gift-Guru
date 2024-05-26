@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
+import Searchbar from "../SearchBar/Searchbar";
 
-const GiftForm = ({ onGenerateGiftIdeas, onFormDataChange }) => {
+const GiftForm = ({ onGenerateGiftIdeas, onFormDataChange, initialPrompt }) => {
   const [formData, setFormData] = useState({
     age: "",
     gender: "",
@@ -9,14 +10,21 @@ const GiftForm = ({ onGenerateGiftIdeas, onFormDataChange }) => {
     recipientType: "",
     priceRange: "",
     categories: [],
-    prompt: ""
+    prompt: initialPrompt || "",
   });
+
+  useEffect(() => {
+    setFormData((prevData) => ({
+      ...prevData,
+      prompt: initialPrompt,
+    }));
+  }, [initialPrompt]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
       ...prevData,
-      [name]: value
+      [name]: value,
     }));
     onFormDataChange({ ...formData, [name]: value });
   };
@@ -28,7 +36,7 @@ const GiftForm = ({ onGenerateGiftIdeas, onFormDataChange }) => {
       : formData.categories.filter((category) => category !== name);
     setFormData((prevData) => ({
       ...prevData,
-      categories: updatedCategories
+      categories: updatedCategories,
     }));
     onFormDataChange({ ...formData, categories: updatedCategories });
   };
@@ -47,188 +55,100 @@ const GiftForm = ({ onGenerateGiftIdeas, onFormDataChange }) => {
     }
   };
 
+  const handleSearchChange = (newSearchTerm) => {
+    setFormData((prevData) => ({
+      ...prevData,
+      prompt: newSearchTerm,
+    }));
+    onFormDataChange({ ...formData, prompt: newSearchTerm });
+  };
+
   return (
-    <div className="m-4">
-      <h1 className="text-xl font-bold mb-4">Gift Guru</h1>
-      <form onSubmit={handleSubmit}>
-        {/* Form fields */}
-        <div className="mb-4">
-          <label htmlFor="age" className="text-m font-semibold mb-3 block open-sans-regular">
-            Age Range:
-          </label>
-          <select
-            id="age"
-            name="age"
-            className="block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-orange-400 focus:border-orange-400"
-            value={formData.age}
-            onChange={handleChange}
-            required
-          >
-            <option value="">Select Age</option>
-            <option value="1-10">1-10</option>
-            <option value="10-18">10-18</option>
-            <option value="18-25">18-25</option>
-            <option value="25-40">25-40</option>
-            <option value="40-60">40-60</option>
-            <option value="60+">60+</option>
-          </select>
-        </div>
-        <div className="mb-4">
-          <label htmlFor="gender" className="text-m font-semibold mb-3 block open-sans-regular">
-            Gender:
-          </label>
-          <select
-            id="gender"
-            name="gender"
-            className="block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-orange-400 focus:border-orange-400"
-            value={formData.gender}
-            onChange={handleChange}
-            required
-          >
-            <option value="">Select Gender</option>
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-            <option value="other">Other</option>
-          </select>
-        </div>
-        <div className="mb-4">
-          <label htmlFor="occasion" className="text-m font-semibold mb-3 block open-sans-regular">
-            Occasion:
-          </label>
-          <select
-            id="occasion"
-            name="occasion"
-            className="block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-orange-400 focus:border-orange-400"
-            value={formData.occasion}
-            onChange={handleChange}
-            required
-          >
-            <option value="">Select Occasion</option>
-            <option value="birthday">Birthday</option>
-            <option value="wedding">Wedding</option>
-            <option value="anniversary">Anniversary</option>
-            <option value="graduation">Graduation</option>
-            <option value="holidays">Holidays</option>
-            <option value="other">Other</option>
-          </select>
-        </div>
-        <div className="mb-4">
-          <label htmlFor="recipientType" className="text-m font-semibold mb-3 block open-sans-regular">
-            Recipient Type:
-          </label>
-          <select
-            id="recipientType"
-            name="recipientType"
-            className="block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-orange-400 focus:border-orange-400"
-            value={formData.recipientType}
-            onChange={handleChange}
-            required
-          >
-            <option value="">Select Recipient Type</option>
-            <option value="Mother">Mother</option>
-            <option value="Father">Father</option>
-            <option value="Lover">Lover</option>
-            <option value="Wife">Wife</option>
-            <option value="Brother">Brother</option>
-            <option value="Sister">Sister</option>
-            <option value="Friend">Friend</option>
-            <option value="Relatives">Relatives</option>
-          </select>
-        </div>
-        <div className="mb-4">
-          <label htmlFor="priceRange" className="text-m font-semibold mb-3 block open-sans-regular">
-            Price Range:
-          </label>
-          <select
-            id="priceRange"
-            name="priceRange"
-            className="block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-orange-400 focus:border-orange-400"
-            value={formData.priceRange}
-            onChange={handleChange}
-            required
-          >
-            <option value="">Select Price Range</option>
-            <option value="0-20">$0 - $20</option>
-            <option value="21-50">$21 - $50</option>
-            <option value="51-100">$51 - $100</option>
-            <option value="101-200">$101 - $200</option>
-            <option value="201-500">$201 - $500</option>
-            <option value="501-1000">$501 - $1000</option>
-            <option value="1000+">$1000+</option>
-          </select>
-        </div>
-        <div className="mb-4">
-          <label htmlFor="categories" className="text-m font-semibold mb-3 block open-sans-regular">
-            Categories:
-          </label>
-          <div id="categories" className="block">
-            <label className="inline-flex items-center">
-              <input
-                type="checkbox"
-                name="electronics"
-                onChange={handleCheckboxChange}
-                className="form-checkbox h-5 w-5 text-orange-500 transition duration-150 ease-in-out"
-              />
-              <span className="ml-2">Electronics</span>
-            </label>
-            <label className="inline-flex items-center ml-4">
-              <input
-                type="checkbox"
-                name="fashion"
-                onChange={handleCheckboxChange}
-                className="form-checkbox h-5 w-5 text-orange-500 transition duration-150 ease-in-out"
-              />
-              <span className="ml-2">Fashion</span>
-            </label>
-            <label className="inline-flex items-center ml-4">
-              <input
-                type="checkbox"
-                name="home"
-                onChange={handleCheckboxChange}
-                className="form-checkbox h-5 w-5 text-orange-500 transition duration-150 ease-in-out"
-              />
-              <span className="ml-2">Home</span>
-            </label>
-            <label className="inline-flex items-center ml-4">
-              <input
-                type="checkbox"
-                name="books"
-                onChange={handleCheckboxChange}
-                className="form-checkbox h-5 w-5 text-orange-500 transition duration-150 ease-in-out"
-              />
-              <span className="ml-2">Books</span>
-            </label>
-          </div>
-        </div>
-        <div className="mb-4">
-          <label htmlFor="prompt" className="text-m font-semibold mb-3 block open-sans-regular">
-            Prompt:
-          </label>
-          <textarea
-            id="prompt"
-            name="prompt"
-            className="block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-orange-400 focus:border-orange-400"
-            value={formData.prompt}
-            onChange={handleChange}
-          />
-        </div>
-        <div className="flex justify-between">
-          <button
-            type="submit"
-            className="bg-orange-500 text-white px-4 py-2 rounded-md hover:bg-orange-600"
-          >
-            Submit
-          </button>
-          <button
-            type="button"
-            onClick={generateGiftIdeas}
-            className="bg-orange-500 text-white px-4 py-2 rounded-md hover:bg-orange-600"
-          >
-            Generate More
-          </button>
-        </div>
-      </form>
-    </div>
+    <form onSubmit={handleSubmit}>
+      <div className="mb-4">
+        <label htmlFor="age" className="block mb-2">Age:</label>
+        <select id="age" name="age" value={formData.age} onChange={handleChange} className="w-full px-3 py-2 border border-gray-300 rounded">
+          <option value="">Select age</option>
+          <option value="0-12">0-12</option>
+          <option value="13-17">13-17</option>
+          <option value="18-24">18-24</option>
+          <option value="25-34">25-34</option>
+          <option value="35-44">35-44</option>
+          <option value="45-54">45-54</option>
+          <option value="55-64">55-64</option>
+          <option value="65+">65+</option>
+        </select>
+      </div>
+      <div className="mb-4">
+        <label htmlFor="gender" className="block mb-2">Gender:</label>
+        <select id="gender" name="gender" value={formData.gender} onChange={handleChange} className="w-full px-3 py-2 border border-gray-300 rounded">
+          <option value="">Select gender</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <div className="mb-4">
+        <label htmlFor="occasion" className="block mb-2">Occasion:</label>
+        <select id="occasion" name="occasion" value={formData.occasion} onChange={handleChange} className="w-full px-3 py-2 border border-gray-300 rounded">
+          <option value="">Select occasion</option>
+          <option value="Birthday">Birthday</option>
+          <option value="Anniversary">Anniversary</option>
+          <option value="Christmas">Christmas</option>
+          <option value="Valentine's Day">Valentine's Day</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <div className="mb-4">
+        <label htmlFor="recipientType" className="block mb-2">Recipient Type:</label>
+        <select id="recipientType" name="recipientType" value={formData.recipientType} onChange={handleChange} className="w-full px-3 py-2 border border-gray-300 rounded">
+          <option value="">Select recipient type</option>
+          <option value="Family">Family</option>
+          <option value="Friend">Friend</option>
+          <option value="Colleague">Colleague</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <div className="mb-4">
+        <label htmlFor="priceRange" className="block mb-2">Price Range:</label>
+        <select id="priceRange" name="priceRange" value={formData.priceRange} onChange={handleChange} className="w-full px-3 py-2 border border-gray-300 rounded">
+          <option value="">Select price range</option>
+          <option value="$0-$25">$0-$25</option>
+          <option value="$25-$50">$25-$50</option>
+          <option value="$50-$100">$50-$100</option>
+          <option value="$100-$200">$100-$200</option>
+          <option value="$200+">$200+</option>
+        </select>
+      </div>
+      <div className="mb-4">
+        <label className="block mb-2">Categories:</label>
+        <label className="inline-flex items-center mr-4">
+          <input type="checkbox" name="electronics" checked={formData.categories.includes("electronics")} onChange={handleCheckboxChange} className="form-checkbox" />
+          <span className="ml-2">Electronics</span>
+        </label>
+        <label className="inline-flex items-center mr-4">
+          <input type="checkbox" name="fashion" checked={formData.categories.includes("fashion")} onChange={handleCheckboxChange} className="form-checkbox" />
+          <span className="ml-2">Fashion</span>
+        </label>
+        <label className="inline-flex items-center mr-4">
+          <input type="checkbox" name="home" checked={formData.categories.includes("home")} onChange={handleCheckboxChange} className="form-checkbox" />
+          <span className="ml-2">Home</span>
+        </label>
+        <label className="inline-flex items-center mr-4">
+          <input type="checkbox" name="toys" checked={formData.categories.includes("toys")} onChange={handleCheckboxChange} className="form-checkbox" />
+          <span className="ml-2">Toys</span>
+        </label>
+        <label className="inline-flex items-center mr-4">
+          <input type="checkbox" name="beauty" checked={formData.categories.includes("beauty")} onChange={handleCheckboxChange} className="form-checkbox" />
+          <span className="ml-2">Beauty</span>
+        </label>
+      </div>
+      <div className="mb-4">
+        <label htmlFor="prompt" className="block mb-2">Prompt:</label>
+        <Searchbar searchTerm={formData.prompt} onSearchChange={handleSearchChange} />
+      </div>
+      <button type="submit" className="bg-orange-400 text-white px-4 py-2 rounded">Generate Gift Ideas</button>
+    </form>
   );
 };
 

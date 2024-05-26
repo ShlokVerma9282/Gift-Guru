@@ -28,11 +28,7 @@
     margin: 5px 0;
 }
 
-.flex {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+
 
 .gap-1 {
     gap: 0.25rem;

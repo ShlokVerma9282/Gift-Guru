@@ -7,25 +7,28 @@ import LinkedIn from "../../img/twitter.png";
 import Instagram from "../../img/insta.png";
 import GiftForm from "./GiftForm";
 import Carousel from "../Carousel/Slider";
-import GiftProducts from "./GiftProducts";
-import Searchbar from "../SearchBar/Searchbar";
-import Geocode from "./Geocode";
 
 const ITEMS_PER_PAGE = 3;
 
 const Intro = () => {
   const [showGiftProducts, setShowGiftProducts] = useState(false);
-  const [searchTerm, setSearchTerm] = useState("");
   const [giftIdeas, setGiftIdeas] = useState([]);
   const [error, setError] = useState("");
   const [showGiftIdeasContainer, setShowGiftIdeasContainer] = useState(false);
   const [currentPage, setCurrentPage] = useState(0);
   const [isLoadingMore, setIsLoadingMore] = useState(false);
   const [formData, setFormData] = useState(null);
+  const [selectedPrompt, setSelectedPrompt] = useState(""); // Add state for selected prompt
 
   const handleButtonClick = () => setShowGiftProducts(true);
 
-  const handleReviewClick = (review) => setSearchTerm(review);
+  const handleReviewClick = (review) => {
+    setSelectedPrompt(review); // Update the selected prompt
+    setFormData((prevData) => ({
+      ...prevData,
+      prompt: review,
+    }));
+  };
 
   const handleGenerateGiftIdeas = (ideas, error) => {
     setGiftIdeas(ideas);
@@ -76,7 +79,7 @@ const Intro = () => {
           <div className="flex flex-col gap-2">
             <p className="font-bold text-5xl mt-10 text-orange-400 fuzzy-bubbles-bold">GiftGuru</p>
             <div className="flex justify-center items-center text-5xl mt-5">
-              <p className="text-xl inline-block open-sans-regular font-bold">
+              <p className="text-xl inline-block open-sans-regular ">
                 The ultimate destination for discovering the perfect gift for every occasion, offering an unparalleled selection of thoughtfully curated treasures for your
                 <ReactTyped
                   className="inline-block text-orange-400 font-bold ml-1"
@@ -103,16 +106,13 @@ const Intro = () => {
 
         <div className="flex flex-1 relative">
           <div className="max-w-2xl ml-10 p-8 bg-white shadow-md rounded-md">
-            <GiftForm onGenerateGiftIdeas={handleGenerateGiftIdeas} onFormDataChange={handleFormDataChange} />
-            <div className="mt-10">
-              <Searchbar setExternalSearchTerm={searchTerm} />
-            </div>
+            <GiftForm onGenerateGiftIdeas={handleGenerateGiftIdeas} onFormDataChange={handleFormDataChange} initialPrompt={selectedPrompt} />
           </div>
         </div>
       </div>
 
       {showGiftIdeasContainer && (
-        <div className=" ml-10 mr-10  bg-white text-black p-4 shadow-md rounded-md" style={{ height: "40vh", width: "175vh" }}>
+        <div className=" ml-10 mr-10  bg-white text-black p-4 shadow-md rounded-md" style={{ height: "40vh", width: "178vh" }}>
           {error && <p>{error}</p>}
           <ul>
             {displayedIdeas.map((idea, index) => (
@@ -137,19 +137,7 @@ const Intro = () => {
         </div>
       )}
 
-      {showGiftProducts && (
-        <div>
-          <div className="flex ml-10 mr-10 p-8 bg-white shadow-md rounded-md" style={{ height: "70vh", width: "175vh" }}>
-            <div className="flex flex-col flex-1 w-1/2 pr-20">
-              <GiftProducts />
-            </div>
-            <div className="border-l-2 border-orange-400"></div>
-            <div className="flex flex-col flex-1 w-1/2 pl-20">
-              <Geocode />
-            </div>
-          </div>
-        </div>
-      )}
+      
     </div>
   );
 };

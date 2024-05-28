@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import axios from "axios";
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import { ReactTyped } from "react-typed";
 import Github from "../../img/facebookorange.png";
 import messenger from "../../img/facebookmessenger.png";
@@ -7,6 +7,7 @@ import LinkedIn from "../../img/twitter.png";
 import Instagram from "../../img/insta.png";
 import GiftForm from "./GiftForm";
 import Carousel from "../Carousel/Slider";
+import FetchImage from './FetchImage';  // Import the new FetchImage component
 
 const ITEMS_PER_PAGE = 3;
 
@@ -18,12 +19,12 @@ const Intro = () => {
   const [currentPage, setCurrentPage] = useState(0);
   const [isLoadingMore, setIsLoadingMore] = useState(false);
   const [formData, setFormData] = useState(null);
-  const [selectedPrompt, setSelectedPrompt] = useState(""); // Add state for selected prompt
+  const [selectedPrompt, setSelectedPrompt] = useState("");
 
   const handleButtonClick = () => setShowGiftProducts(true);
 
   const handleReviewClick = (review) => {
-    setSelectedPrompt(review); // Update the selected prompt
+    setSelectedPrompt(review);
     setFormData((prevData) => ({
       ...prevData,
       prompt: review,
@@ -31,7 +32,7 @@ const Intro = () => {
   };
 
   const handleGenerateGiftIdeas = (ideas, error) => {
-    setGiftIdeas(ideas);
+    setGiftIdeas(ideas); // Clear and set new gift ideas
     setError(error);
     setShowGiftIdeasContainer(true);
     setCurrentPage(0);
@@ -79,7 +80,7 @@ const Intro = () => {
           <div className="flex flex-col gap-2">
             <p className="font-bold text-5xl mt-10 text-orange-400 fuzzy-bubbles-bold">GiftGuru</p>
             <div className="flex justify-center items-center text-5xl mt-5">
-              <p className="text-xl inline-block open-sans-regular ">
+              <p className="text-xl inline-block open-sans-regular">
                 The ultimate destination for discovering the perfect gift for every occasion, offering an unparalleled selection of thoughtfully curated treasures for your
                 <ReactTyped
                   className="inline-block text-orange-400 font-bold ml-1"
@@ -94,10 +95,10 @@ const Intro = () => {
           </div>
 
           <div className="flex gap-3">
-            <img src={LinkedIn} alt="LinkedIn" className="transform scale-50 hover:scale-75" />
-            <img src={Instagram} alt="Instagram" className="transform scale-50 hover:scale-75" />
-            <img src={Github} alt="Github" className="transform scale-50 hover:scale-75" />
-            <img src={messenger} alt="Messenger" className="transform scale-50 hover:scale-75" />
+            <img src={LinkedIn} alt="LinkedIn" className=" scale-75 transform hover:scale-100 transition-transform duration-300" />
+            <img src={Instagram} alt="Instagram"  className="scale-75 transform hover:scale-100 transition-transform duration-300" />
+            <img src={Github} alt="Github"  className="scale-75 transform hover:scale-100 transition-transform duration-300" />
+            <img src={messenger} alt="Messenger" className="scale-75 transform hover:scale-100 transition-transform duration-300" />
           </div>
           <div className="max-w-2xl p-2 bg-white shadow-md rounded-md">
             <Carousel onReviewClick={handleReviewClick} />
@@ -110,34 +111,36 @@ const Intro = () => {
           </div>
         </div>
       </div>
-
       {showGiftIdeasContainer && (
-        <div className=" ml-10 mr-10  bg-white text-black p-4 shadow-md rounded-md" style={{ height: "40vh", width: "178vh" }}>
-          {error && <p>{error}</p>}
-          <ul>
-            {displayedIdeas.map((idea, index) => (
-              <li key={index}>
-                <strong>{idea.Product_name}</strong>: {idea.Reason}
-              </li>
-            ))}
-          </ul>
-          <div className="flex justify-between mt-4">
-            <button onClick={handlePreviousPage} disabled={currentPage === 0} className="bg-orange-400 text-white px-4 py-2 rounded">
-              Previous
-            </button>
-            <button onClick={handleNextPage} disabled={(currentPage + 1) * ITEMS_PER_PAGE >= giftIdeas.length} className="bg-orange-400 text-white px-4 py-2 rounded">
-              Next
-            </button>
-          </div>
-          <div className="mt-4">
-            <button onClick={handleGenerateMore} className="bg-orange-400 text-white px-4 py-2 rounded" disabled={isLoadingMore}>
-              {isLoadingMore ? 'Loading...' : 'Generate More'}
-            </button>
+        <div className="flex justify-center items-center min-h-screen bg-gray-50 mt-10">
+          <div className="bg-white text-black p-4 shadow-md rounded-md w-full max-w-6xl">
+            {error && <p>{error}</p>}
+            <div className="grid grid-cols-3 gap-4">
+              {displayedIdeas.map((idea, index) => (
+                <div key={index} className="bg-gray-50 p-4 rounded-md shadow-sm flex flex-col justify-between">
+                  <FetchImage query={idea.Product_name} style={{ width: '100%', height: '100px', objectFit: 'cover' }} />
+                  <h3 className="fuzzy-bubbles-bold mb-1 text-orange-400">{idea.Product_name}</h3>
+                  <p className="text-sm mb-2">{idea.Reason}</p>
+                  <a href={`https://www.amazon.in/s?k=${idea.Product_name}+${idea.Company}&tag=genaigifts-21`} target="_blank" rel="noopener noreferrer" className="text-orange-400 hover:underline">View on Amazon</a>
+                </div>
+              ))}
+            </div>
+            <div className="flex justify-between mt-4">
+              <button onClick={handlePreviousPage} disabled={currentPage === 0} className="bg-orange-400 text-white px-4 py-2 rounded disabled:opacity-50">
+                Previous
+              </button>
+              <button onClick={handleNextPage} disabled={(currentPage + 1) * ITEMS_PER_PAGE >= giftIdeas.length} className="bg-orange-400 text-white px-4 py-2 rounded disabled:opacity-50">
+                Next
+              </button>
+            </div>
+            <div className="mt-4">
+              <button onClick={handleGenerateMore} className="bg-orange-400 text-white px-4 py-2 rounded" disabled={isLoadingMore}>
+                {isLoadingMore ? 'Loading...' : 'Generate More'}
+              </button>
+            </div>
           </div>
         </div>
       )}
-
-      
     </div>
   );
 };

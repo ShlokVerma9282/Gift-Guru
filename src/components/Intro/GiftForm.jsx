@@ -47,6 +47,9 @@ const GiftForm = ({ onGenerateGiftIdeas, onFormDataChange, initialPrompt }) => {
   };
 
   const generateGiftIdeas = async () => {
+    // Log the form data being sent
+    console.log("Data being sent:", formData);
+
     try {
       const response = await axios.post("http://localhost:5000/generate_gift_idea", formData);
       onGenerateGiftIdeas(response.data.gift_ideas, "");

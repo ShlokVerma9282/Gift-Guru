@@ -11,7 +11,7 @@ import "./App.css";
 
 function App() {
   const introRef = useRef(null);
-  const aboutRef= useRef(null);
+  const aboutRef = useRef(null);
   const servicesRef = useRef(null);
   const brandsRef = useRef(null);
   const listsRef = useRef(null);
@@ -26,29 +26,27 @@ function App() {
     <div className="App bg-gray-50">
       <Navbar
         scrollToIntro={() => scrollToSection(introRef)}
-        scrollToAbout={()=>scrollToSection(aboutRef)}
+        scrollToAbout={() => scrollToSection(aboutRef)}
         scrollToServices={() => scrollToSection(servicesRef)}
         scrollToBrands={() => scrollToSection(brandsRef)}
         scrollToLists={() => scrollToSection(listsRef)}
       />
-      <div className="ml-10">
-        <div ref={introRef}>
+      <div>
+        <div className="ml-10" ref={introRef}>
           <Intro />
         </div>
         <div ref={aboutRef}>
-        <Ai />
+          <Ai />
         </div>
-        <div >
+        <div>
           <Portfolio />
         </div>
         <div ref={servicesRef}>
           <Services />
         </div>
-        <div ref={brandsRef}>
-          <Works />
-        </div>
+        <div ref={brandsRef}>{/* <Works /> */}</div>
         <div ref={listsRef}>
-        <Testimonial />
+          <Testimonial />
         </div>
       </div>
       <Footer />

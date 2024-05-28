@@ -75,7 +75,7 @@ const Intro = () => {
 
   return (
     <div>
-      <div className="flex ml-10 mt-24 pb-20 pt-13">
+      <div className="flex ml mt-24 pb-20 pt-13">
         <div className="flex flex-col flex-1 gap-8 items-start">
           <div className="flex flex-col gap-2">
             <p className="font-bold text-5xl mt-10 text-orange-400 fuzzy-bubbles-bold">GiftGuru</p>

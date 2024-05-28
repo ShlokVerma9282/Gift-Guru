@@ -14,17 +14,21 @@
   flex-direction: column;
   position: relative;
   /* gap: 20px; */
+  margin-top: 2rem;
+  text-align: center;
 }
 
 .awesome > :nth-child(1) {
   color: var(--black);
   font-size: 2.5rem;
   font-weight: bold;
+  text-align: center;
 }
 .awesome > :nth-child(2) {
   color: var(--orange);
   font-size: 2.5rem;
   font-weight: bold;
+  text-align: center;
 }
 
 .s-button {
@@ -51,21 +55,154 @@
   left: -18rem;
 }
 
-@media screen and (max-width: 480px) {
+/* Responsive styling */
+/* Responsive styling */
+@media screen and (max-width: 475px) {
   .services {
-    margin-top: 0;
-    flex-direction: column;
-    gap: 5rem;
-    height: 66rem;
+    flex-direction: column-reverse; /* Reverse the flex direction for smaller screens */
+    height: auto;
     padding: 0;
+    margin-top: 0;
+    margin: 1rem;
   }
+
+  .cards {
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 15rem; /* Adjust the gap as needed */
+    width: 100%; /* Ensure cards take full width */
+    height: 100%; /* Remove unwanted left side space */
+  }
+
+  .card img {
+    width: 9rem;
+    height: 9rem;
+    margin-bottom: 1rem;
+  }
+
+  .card-container {
+    position: static;
+    width: 100%;
+    height: auto;
+    margin: 0; /* Remove any additional margins */
+  }
+
+  .card .detail {
+    font-size: 2rem;
+  }
+
+  .s-blur2 {
+    left: auto;
+    top: auto;
+    position: relative;
+  }
+}
+
+
+
+@media (min-width: 768px) {
+  .mobile-heading {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .desktop-heading {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .services {
+    /* Adjust styles for tablet layout */
+    flex-direction: row;
+    height: 30rem; /* Or adjust as needed */
+    margin: 8rem 3rem 18rem 3rem; /* Or adjust margins as needed */
+  }
+.card{
+  width: 15rem; /* Ensure cards take full width */
+    height: 100%; 
+}
+.card img {
+  width: 9rem;
+  height: 9rem;
+  margin-bottom: 1rem;
+}
 
   .cards {
     display: flex;
     flex-direction: column;
-    gap: 17rem;
+    gap: 15rem; /* Adjust the gap as needed */
+    width: 100%; /* Ensure cards take full width */
+    height: 100%; /* Remove unwanted left side space */
   }
-  .cards > * {
+
+  .card img {
+    width: 12rem; /* Adjust image size for tablets */
+    height: 12rem; /* Adjust image size for tablets */
+    margin-bottom: 1rem;
+  }
+
+  .card-container {
     position: static;
+    width: auto;
+    height: auto;
+    margin: 0; /* Remove any additional margins */
+  }
+
+  .card .detail {
+    font-size: 2.5rem; /* Adjust font size for tablets */
+  }
+
+  .s-blur2 {
+    left: 14rem; /* Adjust position for tablets */
+    top: 8rem; /* Adjust position for tablets */
+    position: relative; /* Adjust position for tablets */
   }
 }
+
+  @media screen and (min-width: 475px) and (max-width: 768px) {
+    .services {
+      flex-direction: column-reverse; /* Reverse the flex direction for smaller screens */
+      height: auto;
+      padding: 0;
+      margin-top: 0;
+      margin: 1rem;
+    }
+  
+    .cards {
+      margin-top: 5rem;
+      display: flex;
+      flex-direction: row;
+      gap: 10rem; /* Adjust the gap as needed */
+      width: 100%; /* Ensure cards take full width */
+      height: 100%; /* Remove unwanted left side space */
+      margin-bottom: 15rem;
+    }
+  
+    .card img {
+      width: 9rem;
+      height: 9rem;
+      margin-bottom: 1rem;
+    }
+  
+    .card-container {
+      position: static;
+      width: 100%;
+      height: auto;
+      margin: 0; /* Remove any additional margins */
+    }
+  
+    .card .detail {
+      font-size: 2rem;
+    }
+  
+    .s-blur2 {
+      left: auto;
+      top: auto;
+      position: relative;
+    }
+  }
+  
+  

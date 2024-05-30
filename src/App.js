@@ -44,7 +44,7 @@ function App() {
         <div ref={servicesRef}>
           <Services />
         </div>
-        <div ref={brandsRef}>{/* <Works /> */}</div>
+        <div ref={brandsRef}> <Works /> </div>
         <div ref={listsRef}>
           <Testimonial />
         </div>

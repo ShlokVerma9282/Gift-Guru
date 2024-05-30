@@ -10,12 +10,12 @@
   
   export const ServiceData = [
     {
-      head:"Valentine",
-      option1:"1.Ring",
-      option2:"2.Teddy",
-      option3:"3.Chocolate",
-      option4:"4.Roses",
-      option5:"5.Ring",
+      head:"Haloween",
+      option1:"1.Candy",
+      option2:"2.Masks",
+      option3:"3.Props",
+      option4:"4.Skull",
+      option5:"5.Cross Jewelery",
       backgroundImage: SpaceCity9,
     },
     {
@@ -28,12 +28,12 @@
       backgroundImage: SpaceCity1,
     },
     {
-      head:"Valentine",
-      option1:"1.Ring",
-      option2:"2.Teddy",
-      option3:"3.Chocolate",
-      option4:"4.Roses",
-      option5:"5.Ring",
+      head:"Christmas",
+      option1:"1.Elextronics",
+      option2:"2.Cookies",
+      option3:"3.Clothes",
+      option4:"4.Toys",
+      option5:"5.Furniture",
       backgroundImage: SpaceCity6,
     },
     {

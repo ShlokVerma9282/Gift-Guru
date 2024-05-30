@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-const GOOGLE_API_KEY = 'AIzaSyAMCIY6IVXPT3CWVWXjRyqKwyBcwaEBdrY';  // Replace with your actual API key
+const GOOGLE_API_KEY = 'AIzaSyCmjiFXOhJUDho_2TiEqw2F8p2Sc8AsysE';  // Replace with your actual API key
 const CX = 'b3503206c75fc4bf3';
 const GOOGLE_LOGO = 'https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png';
 

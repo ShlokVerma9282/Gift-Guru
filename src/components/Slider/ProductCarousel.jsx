@@ -1,7 +1,3 @@
-
-
-
-
 import React, { useState } from 'react';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
@@ -27,7 +23,7 @@ const settings = {
         {
             breakpoint: 1200,
             settings: {
-                slidesToShow: 3,
+                slidesToShow: 5,
                 slidesToScroll: 1,
                 centerMode: true,
                 centerPadding: "50px",

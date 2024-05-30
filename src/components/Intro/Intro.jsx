@@ -94,11 +94,11 @@ const Intro = () => {
             </div>
           </div>
 
-          <div className="flex gap-3">
-            <img src={LinkedIn} alt="LinkedIn" className=" scale-75 transform hover:scale-100 transition-transform duration-300" />
-            <img src={Instagram} alt="Instagram"  className="scale-75 transform hover:scale-100 transition-transform duration-300" />
-            <img src={Github} alt="Github"  className="scale-75 transform hover:scale-100 transition-transform duration-300" />
-            <img src={messenger} alt="Messenger" className="scale-75 transform hover:scale-100 transition-transform duration-300" />
+          <div className="flex gap-1">
+            <img src={LinkedIn} alt="LinkedIn" className=" scale-50 transform hover:scale-75 transition-transform duration-300" />
+            <img src={Instagram} alt="Instagram"  className="scale-50 transform hover:scale-75 transition-transform duration-300" />
+            <img src={Github} alt="Github"  className="scale-50 transform hover:scale-75 transition-transform duration-300" />
+            <img src={messenger} alt="Messenger" className="scale-50 transform hover:scale-75 transition-transform duration-300" />
           </div>
           <div className="max-w-2xl p-2 bg-white shadow-md rounded-md">
             <Carousel onReviewClick={handleReviewClick} />

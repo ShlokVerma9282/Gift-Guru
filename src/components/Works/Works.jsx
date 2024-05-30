@@ -11,20 +11,20 @@ const Works = () => {
   return (
     <div className="works mt-32" id="works">
       <div className="w-left">
-        <div className="awesome">
-          <span className="fuzzy-bubbles-bold">Works with All these</span>
-          <span className="fuzzy-bubbles-bold">Brands & Clients</span>
-            <span className="open-sans-regular">
-              Trusted by Top Brands We’re proud to collaborate with global giants 
-              <br />
-              like Shopify and Amazon to bring you an array of choices from the best in 
-              <br />
-              the business. Whether it’s a birthday bash or a token of appreciation, find
-              <br /> the ideal gift with ease and confidence.
-            </span>
+        <div >
+          <span className="fuzzy-bubbles-bold text-5xl text-orange-400">Works with All these</span>
+          <br />
+          <span className="fuzzy-bubbles-bold text-black text-5xl">Brands & Clients</span>
+          <br/>
+            <div className="open-sans-regular text-lg mt-4">
+              Trusted by Top Brands We’re proud to collaborate with <br/>global giants 
+              like Shopify and Amazon to bring you an array<br/> of choices from the best in 
+              the business. Whether it’s a birthday<br/> bash or a token of appreciation, find
+              the ideal gift with ease and confidence.
+            </div>
         </div>
       </div>
-      <div className="w-1/5"></div>
+      <div className="w-1/12"></div>
       {/* right side */}
       <div className="w-right">
         <motion.div

@@ -63,10 +63,12 @@ const Services = () => {
         {/* left side */}
         <div className="w-3/5"></div>
         <div className="pt">
-          <div className="awesome">
-            <span className="mt-10 fuzzy-bubbles-bold small-text">Our Awesome</span>
-            <span className="fuzzy-bubbles-bold small-text">services</span>
-            <span className="open-sans-regular small-text" style={{ fontSize: "1rem" }}>
+          <div className=" awesome" >
+            <span className="mt-10 fuzzy-bubbles-bold text-5xl text-black">Our Awesome</span>
+            <br/>
+            <span className=" -mt-5 fuzzy-bubbles-bold text-5xl text-orange-400">services</span>
+            <br/>
+            <span className="open-sans-regular small-text text-lg" >
               Unlock the Art of Thoughtful Gifting at GiftGuru.co.in!
               <br/>Navigate our constellation of curated treasures and unveil
               <br/> the perfect gift with cosmic ease. Begin your journey today,

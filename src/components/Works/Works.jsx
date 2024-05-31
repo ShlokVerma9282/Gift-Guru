@@ -16,7 +16,7 @@ const Works = () => {
           <br />
           <span className="fuzzy-bubbles-bold text-black text-5xl">Brands & Clients</span>
           <br/>
-            <div className="open-sans-regular text-lg mt-4">
+            <div className="font-normal text-lg mt-4">
               Trusted by Top Brands We’re proud to collaborate with <br/>global giants 
               like Shopify and Amazon to bring you an array<br/> of choices from the best in 
               the business. Whether it’s a birthday<br/> bash or a token of appreciation, find

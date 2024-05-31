@@ -116,11 +116,11 @@ const GiftForm = ({ onGenerateGiftIdeas, onFormDataChange, initialPrompt }) => {
         <label htmlFor="priceRange" className="block mb-2">Price Range:</label>
         <select id="priceRange" name="priceRange" value={formData.priceRange} onChange={handleChange} className="w-full px-3 py-2 border border-gray-300 rounded">
           <option value="">Select price range</option>
-          <option value="$0-$25">$0-$25</option>
-          <option value="$25-$50">$25-$50</option>
-          <option value="$50-$100">$50-$100</option>
-          <option value="$100-$200">$100-$200</option>
-          <option value="$200+">$200+</option>
+          <option value="₹0-₹500">₹0-₹500</option>
+          <option value="₹500-₹1000">₹500-₹1000</option>
+          <option value="₹1000-₹3000">₹1000-₹3000</option>
+          <option value="₹3000-₹5000">₹3000-₹5000</option>
+          <option value="₹5000+">₹5000+</option>
         </select>
       </div>
       <div className="mb-4">

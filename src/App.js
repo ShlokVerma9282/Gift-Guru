@@ -3,9 +3,9 @@ import Navbar from "./components/Navbar/Navbar";
 import Intro from "./components/Intro/Intro";
 import Services from "./components/Services/Services";
 import Works from "./components/Works/Works";
-import Ai from "./components/Ai/Ai";
-import Portfolio from "./components/Slider/Slider";
-import Testimonial from "./components/Recommendation/Recommendation";
+import Info from "./components/Ai/Ai";
+import Slider from "./components/Slider/Slider";
+import Recommendation from "./components/Recommendation/Recommendation";
 import Footer from "./components/Footer/Footer";
 import "./App.css";
 
@@ -36,17 +36,19 @@ function App() {
           <Intro />
         </div>
         <div ref={aboutRef}>
-          <Ai />
+          <Info />
         </div>
         <div>
-          <Portfolio />
+          <Slider />
         </div>
         <div ref={servicesRef}>
           <Services />
         </div>
-        <div ref={brandsRef}> <Works /> </div>
+        <div ref={brandsRef}>
+         <Works /> 
+         </div>
         <div ref={listsRef}>
-          <Testimonial />
+          <Recommendation />
         </div>
       </div>
       <Footer />

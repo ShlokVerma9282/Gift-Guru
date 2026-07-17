@@ -51,8 +51,15 @@ const GiftForm = ({ onGenerateGiftIdeas, onFormDataChange, initialPrompt }) => {
     console.log("Data being sent:", formData);
 
     try {
-      const response = await axios.post("http://localhost:5000/generate_gift_idea", formData);
-      onGenerateGiftIdeas(response.data.gift_ideas, "");
+const response = await axios.post(
+  "http://localhost:5000/generate_gift_idea",
+  formData,
+  {
+    headers: {
+      "Content-Type": "application/json"
+    }
+  }
+);     onGenerateGiftIdeas(response.data.gift_ideas, "");
     } catch (error) {
       onGenerateGiftIdeas([], "Error generating gift ideas");
     }

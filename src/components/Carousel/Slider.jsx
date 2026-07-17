@@ -1,10 +1,16 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectCoverflow, Pagination, Navigation } from "swiper";
-import "swiper/swiper-bundle.min.css";
+
+import "swiper/css";
+import "swiper/css/effect-coverflow";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+
 import img1 from "./images/img1.jpeg";
 import img2 from "./images/img2.jpeg";
 import img3 from "./images/img3.jpeg";
+
 import "./Slider.css";
 
 function Carousel({ onReviewClick }) {
@@ -14,7 +20,7 @@ function Carousel({ onReviewClick }) {
         <Swiper
           spaceBetween={30}
           slidesPerView={3}
-          pagination={{ clickable: true, el: '.custom-pagination' }}
+          pagination={{ clickable: true, el: ".custom-pagination" }}
           effect="coverflow"
           centeredSlides={true}
           loop={true}
@@ -39,33 +45,35 @@ function Carousel({ onReviewClick }) {
           }}
           modules={[Autoplay, EffectCoverflow, Pagination, Navigation]}
         >
-          {data.map((d, index) => (
-            <SwiperSlide key={index} className="rounded-3xl">
-            <div className="hover:scale-105 transition-transform duration-300">
-              <div className="flex justify-center items-center w-full mt-2">
-                <img
-                  src={d.img}
-                  alt=""
-                  className="items-center h-70 w-80 rounded-lg border-black cursor-pointer"
+          {data.map((d) => (
+            <SwiperSlide key={d.id} className="rounded-3xl">
+              <div className="hover:scale-105 transition-transform duration-300">
+                <div className="flex justify-center items-center w-full mt-2">
+                  <img
+                    src={d.img}
+                    alt="review"
+                    className="h-70 w-80 rounded-lg cursor-pointer"
+                    onClick={() => onReviewClick(d.review)}
+                  />
+                </div>
+
+                <div
+                  className="bg-gray-50 h-22 w-full text-black rounded-xl flex flex-col items-center justify-center mt-3 mb-2 shadow-lg cursor-pointer"
                   onClick={() => onReviewClick(d.review)}
-                />
+                >
+                  <p className="text-center text-orange-400 text-base">
+                    {d.review}
+                  </p>
+                </div>
               </div>
-          
-              <div
-                className="bg-gray-50 h-22 w-full font-italic text-black rounded-xl flex flex-col items-center justify-center gap-7 mt-3 mb-2 border-black shadow-lg cursor-pointer"
-                onClick={() => onReviewClick(d.review)}
-              >
-                <p className="text-center fuzzy-bubbles-bold text-orange-400 text-base">
-                  {d.review}
-                </p>
-              </div>
-            </div>
-          </SwiperSlide>
-          
-          
+            </SwiperSlide>
           ))}
         </Swiper>
-        <div className="custom-pagination" style={{ marginTop: '40px', textAlign: 'center' }}></div>
+
+        <div
+          className="custom-pagination"
+          style={{ marginTop: "40px", textAlign: "center" }}
+        ></div>
       </div>
     </div>
   );
@@ -73,34 +81,34 @@ function Carousel({ onReviewClick }) {
 
 const data = [
   {
+    id: 1,
     img: img1,
-    review:
-      "Best Gift to Give this christmas.",
+    review: "Best Gift to Give this Christmas.",
   },
   {
+    id: 2,
     img: img2,
-    review:
-      "Best Candy to give this Halloween.",
+    review: "Best Candy to give this Halloween.",
   },
   {
+    id: 3,
     img: img3,
-    review:
-      "Best Gift for this Valentine.",
+    review: "Best Gift for this Valentine.",
   },
   {
+    id: 4,
     img: img1,
-    review:
-      "Best Gift to Give this christmas.",
+    review: "Perfect surprise for your loved ones.",
   },
   {
+    id: 5,
     img: img2,
-    review:
-      "Best Candy to give this Halloween.",
+    review: "Sweet treats for every occasion.",
   },
   {
+    id: 6,
     img: img3,
-    review:
-      "Best Gift for this Valentine.",
+    review: "Romantic gifts made easy.",
   },
 ];
 

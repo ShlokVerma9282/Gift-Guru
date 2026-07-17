@@ -297,7 +297,7 @@ const PerfectPresent = () => {
   );
 };
 
-export default {
+const Forms = {
   GenderInputForm,
   AgeRangeForm,
   EventTypeInputForm,
@@ -306,3 +306,5 @@ export default {
   RecipientForm,
   PerfectPresent,
 };
+
+export default Forms;
